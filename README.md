@@ -1,7 +1,7 @@
 # Under construction!
 
 # Out 'n About ☔
-### A blog blog website for outdoor adventures.
+### A blog website for outdoor adventures.
 School Project exam in front-end development.
 
 ### Website: 
