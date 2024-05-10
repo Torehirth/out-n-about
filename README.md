@@ -17,7 +17,7 @@ School Project exam in front-end development.
 - CSS must follow DRY principles.
 - Create different functionality through Javascript.
 - Create blog posts on WordPress and deploy the WP website to a remote dynamic host.
-- Fetch blog posts through WordPress REST API and deploy the blog site through a static host.
+- Fetch blog posts through WordPress REST API and deploy the Out 'n About website through a static host.
 
 ---
 
