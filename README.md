@@ -6,7 +6,7 @@ School Project exam in front-end development.
 
 ---
 
-### To website: 
+### Website: 
 [Out 'n About](https://...)
 
 <p align="left"><img height="250px" src="https://github.com/Torehirth/Rainy-Days/assets/116200852/8aa17248-3275-4d20-86bb-ad0c634c93f1" alt="screenprint of homepage" /></p>
