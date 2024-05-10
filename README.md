@@ -1,5 +1,3 @@
-# Under construction!
-
 # Out 'n About ☔
 ### A website for outdoor adventure stories.
 School Project exam in front-end development.
