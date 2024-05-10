@@ -1,0 +1,14 @@
+{
+  "name": "out-n-about",
+  "version": "1.0.0",
+  "description": "School Project exam in front-end development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
