@@ -1,0 +1,47 @@
+/* ---------------Fonts and Icons----------------- */
+
+.material-symbols-sharp {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+  font-optical-sizing: auto;
+}
+
+span.size-32 {
+  font-size: 32px;
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 32;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+p,
+a,
+li {
+  font-family: "Raleway";
+}
+
+/* Font: Raleway variable  */
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900 */
+
+/* .raleway-<uniquifier> {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* Font: Plus Jakarta Sans variable */
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 200 to 800 */
+
+/* .plus-jakarta-sans-<uniquifier > {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
