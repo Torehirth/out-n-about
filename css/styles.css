@@ -21,8 +21,22 @@ h5 {
 p,
 a,
 li {
-  font-family: "Raleway";
+  font-family: "Raleway", "Segoe UI", sans-serif;
 }
+/* Font: Noto Serif variable */
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 900 */
+
+/* .noto-serif-<uniquifier> {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+/* --- */
 
 /* Font: Raleway variable  */
 /* <uniquifier>: Use a unique and descriptive class name
@@ -34,6 +48,8 @@ li {
   font-weight: <weight>;
   font-style: normal;
 } */
+
+/* --- */
 
 /* Font: Plus Jakarta Sans variable */
 /* <uniquifier>: Use a unique and descriptive class name
