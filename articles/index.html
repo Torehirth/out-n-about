@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Tore M. Hirth" />
-    <meta name="keywords" content=" outdoor, adventure, travel, blog, activities, explore" />
-    <meta name="description" content="Out 'n About - Read about our outdoor adventures and go explore for yourself" />
+    <meta name="keywords" content=" outdoor, adventures, travel, blog, activities, explore, exciting, inspiring" />
+    <meta
+      name="description"
+      content="Explore Out n' About's latest blog posts filled with outdoor adventures, travel tips, and exciting activities. Stay updated with our newest stories and discover your next adventure. Start exploring now!" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,43 +16,91 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" type="image/icon-x" href="../assets/logo/favicon.ico" />
+    <script type="module" src="../js/views/articles.mjs"></script>
+    <script src="https://kit.fontawesome.com/c4115ef720.js" crossorigin="anonymous"></script>
     <title>Articles | Out 'n About</title>
   </head>
   <body>
-    <header>
+    <div>
       <div>
-        <nav class="outer-nav">
-          <div class="inner-nav">
-            <ul class="nav-links">
-              <a href="./contact/index.html" class="nav-link"><li>Contact</li></a>
-              <a href="./about/index.html" class="nav-link"><li>About</li></a>
-            </ul>
+        <header>
+          <nav class="header-nav">
+            <div class="nav-links-left">
+              <a href="../contact/index.html" class="nav-link">Contact</a>
+              <a href="../about/index.html" class="nav-link">about</a>
+            </div>
             <figure class="logo-container">
               <a href="/"
                 ><img
                   class="logo"
                   src="../assets/logo/logo-orange.svg"
-                  alt="logo with o and a in big letters that sits on top of each other, the rest of the letters are written beside them in small capitals. Everything inside a orange rotated square"
+                  alt="logo inside a orange rotated square, with o and a in big letters, rest of letters are written beside them in small letters"
               /></a>
-              <a href="/"><img class="logo" src="../assets/logo/logo-name.svg" alt="written logo in big capitals in white colour" /></a>
+              <a href="/"><img class="logo logo-text" src="../assets/logo/logo-name.svg" alt="written logo in big capitals" /></a>
             </figure>
-            <ul class="nav-links">
-              <a href="./articles/index.html" class="nav-link"><li>Articles</li></a>
-              <a href="/" class="nav-link"><li>Home</li></a>
-              <a href="" class="nav-link zero-padding"
-                ><li><span class="material-symbols-sharp size-32">search</span></li></a
-              >
-            </ul>
-          </div>
-        </nav>
+            <div class="nav-links-right">
+              <a href="../articles/index.html" class="nav-link articles">Articles</a>
+              <a href="/" class="nav-link home current-page">Home</a>
+              <a href="" class="nav-link zero-padding search-icon"><span class="material-symbols-sharp size-32">search</span></a>
+              <button class="hamburger">
+                <div class="hamburger-bar"></div>
+              </button>
+            </div>
+          </nav>
+          <aside class="mobile-nav">
+            <nav class="mobile-nav-links">
+              <a href="/" class="mobile-nav-link current-mobile-page">home</a>
+              <a href="../articles/index.html" class="mobile-nav-link">articles</a>
+              <a href="../about/index.html" class="mobile-nav-link">about</a>
+              <a href="../contact/index.html" class="mobile-nav-link">contact</a>
+            </nav>
+            <div class="some-icons-container">
+              <a href="https://www.facebook.com" class="mobile-some-link"><span>facebook</span><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com" class="mobile-some-link"><span>instagram</span><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.twitter.com" class="mobile-some-link"><span>twitter</span><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://www.github.com/torehirth" class="mobile-some-link"><span>github</span><i class="fa-brands fa-github"></i></a>
+            </div>
+          </aside>
+        </header>
       </div>
-    </header>
+    </div>
     <main class="content" id="main-content">
       <h1>main content</h1>
     </main>
     <footer>
-      <div class="main-footer"><h1>main footer</h1></div>
-      <div class="second-footer"><h1>second footer</h1></div>
+      <div class="footer">
+        <div class="first-footer">
+          <div class="left-container">
+            <a href="/" class="footer-logo"><img src="../assets/logo/logo-without-frame.svg" alt="logo without orange frame" /></a>
+            <nav class="footer-nav">
+              <a href="" class="footer-nav-link current-page">home</a>
+              <a href="" class="footer-nav-link">articles</a>
+              <a href="" class="footer-nav-link">about</a>
+              <a href="" class="footer-nav-link">contact</a>
+            </nav>
+          </div>
+          <div class="right-container">
+            <div class="some-container">
+              <p>follow me</p>
+              <div class="some-icons-container">
+                <a href="https://www.facebook.com" class="some-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com" class="some-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com" class="some-link"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.github.com/torehirth" class="some-link"><i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+            <div class="top-btn-container">
+              <div class="top-btn">
+                <a href="#"><span class="material-symbols-sharp size-32 arrow-up"> keyboard_arrow_up</span></a>
+              </div>
+              <p>top</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="copyright">Copyright &copy 2024, Out 'n About. All rights reserved!</p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
