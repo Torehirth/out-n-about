@@ -201,7 +201,7 @@ p {
 }
 /* ----- landing page ---- */
 .hero {
-  background-image: url(../assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp);
+  background-image: url(../assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -529,9 +529,8 @@ footer {
   /* --- landing page --- */
 
   .hero {
-    background-image: url(../assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp);
     background-size: cover;
-    background-position: 80% center;
+    background-position: center;
   }
   .landing-container {
     top: 13rem;
@@ -562,8 +561,8 @@ footer {
   /* --- footer --- */
   .first-footer {
     flex-direction: column;
-    gap: 5rem;
-    padding: 2rem 10px;
+    gap: 6rem;
+    padding: 2rem 10px 5rem;
   }
 
   .left-container {
@@ -611,7 +610,7 @@ footer {
 
   .copyright {
     font-size: var(--text-size-12);
-    padding: 2rem 10px 1rem;
+    padding: 2rem 10px 2rem;
   }
 }
 
