@@ -39,6 +39,7 @@
 } */
 
 /* --------------- general style ----------------- */
+
 * {
   padding: 0;
   margin: 0;
@@ -84,7 +85,8 @@ body {
   --link-size: 1.125rem;
   /* other styles */
   --scale-5: 1.05;
-  --border: solid 1px var(--black);
+  --white-border: solid 1px var(--white);
+  --black-border: solid 1px var(--black);
   --border-radius-2: 2px;
   --btn-shadow: 2px 2px 4px var(--black);
   --transition: all 0.3s ease;
@@ -128,7 +130,7 @@ p {
 
 /* ---current page--- */
 .current-page {
-  border-bottom: solid 1px var(--black-low-opacity);
+  border-bottom: solid 1px var(--light-grey);
 }
 
 /* --- display none --- */
@@ -152,6 +154,7 @@ p {
 .nav-links-left a,
 .nav-links-right a {
   font-size: var(--link-nav-size);
+  color: var(--white);
 }
 
 .logo-container,
@@ -183,7 +186,7 @@ p {
   left: 0;
   width: 0%;
   transition: var(--transition);
-  border-top: var(--border);
+  border-top: var(--white-border);
 }
 
 .nav-link:hover::before,
@@ -193,7 +196,7 @@ p {
 
 .nav-link:active,
 .footer-nav-link:active {
-  border-top: var(--border);
+  border-top: var(--white-border);
 }
 
 .zero-padding {
@@ -201,13 +204,12 @@ p {
 }
 /* ----- landing page ---- */
 .hero {
-  background-image: url(../assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/img/daniel-frank-R5CpX0Ktrzs-unsplash-qhd-lossy.webp);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   max-width: 100%;
   text-align: center;
-  background-attachment: fixed;
 }
 
 .landing-container {
@@ -216,7 +218,7 @@ p {
   align-items: center;
   justify-content: center;
   position: relative;
-  top: 25rem;
+  top: 30rem;
   padding-inline: 1rem;
   gap: 6rem;
 }
@@ -229,26 +231,29 @@ p {
 }
 
 .main-heading {
+  font-family: var(--text-font);
   font-size: var(--h2-size);
-  font-weight: 700;
-  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 400;
 }
 
 .second-heading {
   font-size: var(--h1-size);
+  color: var(--white);
   font-weight: 900;
   text-transform: uppercase;
 }
 
 .heading-btn {
-  padding: 16px 32px;
-  background-color: var(--black);
+  padding: 14px 36px;
+  background-color: transparent;
+  text-transform: uppercase;
   font-size: var(--link-size);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--orange);
   width: fit-content;
+  border: solid 2px var(--orange);
   border-radius: var(--border-radius-2);
-  box-shadow: var(--btn-shadow);
 }
 
 .heading-btn:hover,
@@ -258,7 +263,12 @@ p {
   transition: var(--transition);
 }
 
-/* ----- Footer ---- */
+/* --- content --- */
+.content {
+  background-color: var(--light-grey);
+}
+
+/* --- Footer --- */
 footer {
   margin-top: auto;
   display: flex;
@@ -319,7 +329,7 @@ footer {
 }
 
 .some-container p {
-  font-family: var(--serif-font);
+  font-family: var(--text-font);
   font-size: var(--text-size-14);
   text-transform: capitalize;
   text-align: center;
@@ -356,7 +366,7 @@ footer {
 }
 
 .arrow-up {
-  border: var(--border);
+  border: var(--black-border);
   color: var(--black);
   border-radius: var(--border-radius-2);
 }
@@ -417,6 +427,12 @@ footer {
 
   .header-nav {
     justify-content: space-between;
+    padding: 10px 1rem;
+  }
+
+  .nav-link::before,
+  .nav-link:active {
+    border-top: none;
   }
 
   /* --- hamburger menu --- */
@@ -439,7 +455,7 @@ footer {
     height: 1px;
     width: 100%;
     margin: 6px 0;
-    background-color: var(--black);
+    background-color: var(--white);
     transition: var(--transition);
   }
 
@@ -467,7 +483,6 @@ footer {
     width: 100%;
     height: 100vh;
     background-color: var(--black);
-    opacity: 0.95;
     padding-top: 137px;
     z-index: 98;
     transition: var(--transition);
@@ -484,7 +499,7 @@ footer {
     width: 100%;
     max-width: 150px;
     margin-inline: auto;
-    padding: 10rem 2rem;
+    padding: 8rem 2rem;
     font-size: var(--link-size);
     text-align: center;
   }
@@ -513,6 +528,7 @@ footer {
     color: var(--white);
     display: flex;
     flex-direction: column-reverse;
+    align-items: center;
   }
 
   .mobile-some-link span {
