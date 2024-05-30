@@ -12,11 +12,12 @@
 .post-carousel {
   display: flex;
   gap: 1rem;
-  overflow-x: auto;
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
 }
 
 .post-carousel::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 .post-carousel-card {
@@ -24,6 +25,11 @@
   flex-direction: column;
   background: var(--white);
   border-radius: var(--border-radius-2);
+  scroll-snap-align: start;
+}
+
+.post-carousel-card:last-child {
+  scroll-snap-align: end;
 }
 
 .post-carousel-card img {
@@ -32,6 +38,12 @@
   object-fit: cover;
   max-width: 300px;
   border-radius: var(--border-radius-2);
+}
+
+.post-carousel-card:hover,
+.post-carousel-card:active {
+  transform: scale(0.98);
+  transition: var(--transition);
 }
 
 .post-carousel-card-copy {
