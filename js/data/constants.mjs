@@ -7,7 +7,6 @@ export const mobileSoMeLinks = document.querySelectorAll(".mobile-social-media-l
 // ---card carousel---
 export const prevBtn = document.querySelector("#prev-btn");
 export const nextBtn = document.querySelector("#next-btn");
-// can't select multiple elements with the same ID
-export const cards = document.querySelectorAll(".post-carousel-card");
 export const carousel = document.querySelector("#post-carousel");
+export const cards = Array.from(carousel.children); // extracting cards (children) from carousel (parent) in an array
 // --- ---
