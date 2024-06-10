@@ -4,7 +4,6 @@ import { updateCarouselButtonOpacity } from "../utils/updateCarouselButtonOpacit
 const gap = parseInt(window.getComputedStyle(carousel).gap); // get the gap between the cards
 const cardWidth = cards[0].offsetWidth; // get the width of the card + gap
 let currentIndex = 0; // set the current index to 0
-
 // function for scrolling the carousel based on the index, letting the user scroll to start of each card
 export const scrollCarouselByClick = (index) => {
   const scrollAmount = index * (cardWidth + gap);

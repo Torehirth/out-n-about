@@ -30,3 +30,4 @@ export const scrollCarouselByDrag = (carousel) => {
     changeCursor(); // Change cursor back to 'pointer'
   });
 };
+

@@ -9,4 +9,5 @@ export const prevBtn = document.querySelector("#prev-btn");
 export const nextBtn = document.querySelector("#next-btn");
 export const carousel = document.querySelector("#post-carousel");
 export const cards = Array.from(carousel.children); // extracting cards (children) from carousel (parent) in an array
+export const cardImages = document.querySelectorAll(".post-carousel-card img");
 // --- ---
