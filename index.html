@@ -10,7 +10,6 @@
       content="Out n' About - Your ultimate travel blog for outdoor adventures. Explore exciting activities, discover hidden gems, and get inspired to embark on your next journey" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/components/message.css" />
-    <link rel="stylesheet" href="./css/components/card-carousel.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -72,117 +71,160 @@
             </div>
           </aside>
         </header>
-        <section class="landing-container">
+        <article class="landing-container">
           <div class="heading-container">
             <h1 class="main-heading">Explore Nature's Playground with me</h1>
             <h1 class="second-heading">Your inspiration to Outdoor adventures</h1>
           </div>
-          <a href="#main-content" class="heading-btn">Read more</a>
-        </section>
+          <div class="landing-btn-down-wrapper">
+            <div class="landing-btn-down">
+              <a href="#main-content"><span class="material-symbols-sharp size-32 landing-arrow-down">keyboard_arrow_down</span></a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
     <main class="content" id="main-content">
-      <section class="post-carousel-wrapper">
-        <h2>popular posts</h2>
-        <button class="carousel-arrow-left" id="prev-btn"><span class="material-symbols-sharp size-32">keyboard_arrow_left</span></button>
-        <button class="carousel-arrow-right" id="next-btn"><span class="material-symbols-sharp size-32">keyboard_arrow_right</span></button>
-        <div class="post-carousel" id="post-carousel">
-          <figure class="post-carousel-card">
-            <img src="./assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
+      <!------ Latest posts ------>
+      <section class="category-cards-wrapper">
+        <div class="category-headline-container">
+          <h2>latest post</h2>
+        </div>
+        <div class="cards-wrapper">
+          <div class="card-container">
+            <img src="./assets/img/luca-micheli-ruWkmt3nU58-unsplash(Large).webp" alt="" class="card-img" />
+            <div class="card-copy">
+              <h3>title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam quas voluptatibus necessitatibus est repellat</p>
             </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/daniel-frank-R5CpX0Ktrzs-unsplash-qhd-lossy.webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
+          </div>
+          <div class="card-container">
+            <img src="./assets/img/luca-micheli-ruWkmt3nU58-unsplash(Large).webp" alt="" class="card-img" />
+            <div class="card-copy">
+              <h3>title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam quas voluptatibus necessitatibus est repellat</p>
             </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
+          </div>
+          <div class="card-container">
+            <img src="./assets/img/luca-micheli-ruWkmt3nU58-unsplash(Large).webp" alt="" class="card-img" />
+            <div class="card-copy">
+              <h3>title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam quas voluptatibus necessitatibus est repellat</p>
             </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/luca-bravo-ESkw2ayO2As-unsplash(Large).webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
+          </div>
+          <div class="card-container">
+            <img src="./assets/img/luca-micheli-ruWkmt3nU58-unsplash(Large).webp" alt="" class="card-img" />
+            <div class="card-copy">
+              <h3>title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam quas voluptatibus necessitatibus est repellat</p>
             </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/john-towner-JgOeRuGD_Y4-unsplash(Large).webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/diego-jimenez-A-NVHPka9Rk-unsplash (Large).webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/daniel-frank-R5CpX0Ktrzs-unsplash-qhd-lossy.webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/luca-bravo-ESkw2ayO2As-unsplash(Large).webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/john-towner-JgOeRuGD_Y4-unsplash(Large).webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
-          <figure class="post-carousel-card">
-            <img src="./assets/img/diego-jimenez-A-NVHPka9Rk-unsplash (Large).webp" alt="" />
-            <div class="post-carousel-card-copy">
-              <h4>title</h4>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
-              <a href="#" class="read-more-btn">read more</a>
-            </div>
-          </figure>
+          </div>
+        </div>
+      </section>
+      <!---------------- Carousel ---------------->
+      <section class="popular-post-section">
+        <div class="post-carousel-wrapper">
+          <h2>popular posts</h2>
+          <button class="carousel-arrow-left" id="prev-btn"><span class="material-symbols-sharp size-32">keyboard_arrow_left</span></button>
+          <button class="carousel-arrow-right" id="next-btn"><span class="material-symbols-sharp size-32">keyboard_arrow_right</span></button>
+          <div class="post-carousel" id="post-carousel">
+            <figure class="post-carousel-card">
+              <img src="./assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/daniel-frank-R5CpX0Ktrzs-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/luca-bravo-ESkw2ayO2As-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/john-towner-JgOeRuGD_Y4-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/diego-jimenez-A-NVHPka9Rk-unsplash (Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/daniel-frank-R5CpX0Ktrzs-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/luca-bravo-ESkw2ayO2As-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/john-towner-JgOeRuGD_Y4-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="./assets/img/diego-jimenez-A-NVHPka9Rk-unsplash (Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+          </div>
         </div>
       </section>
     </main>

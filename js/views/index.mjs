@@ -1,5 +1,10 @@
 import { toggleMobileNav } from "../ui/toggleMobileNav.mjs";
-import { scrollCarousel } from "../components/scrollCarousel.mjs";
+import { scrollCarouselByClick } from "../components/scrollCarouselByClick.mjs";
+import { scrollCarouselByDrag } from "../components/scrollCarouselByDrag.mjs";
+import { carousel, cardImages } from "../data/constants.mjs";
+import { cardHoverEffect } from "../utils/cardHoverEffect.mjs";
 
 toggleMobileNav();
-scrollCarousel();
+scrollCarouselByClick();
+scrollCarouselByDrag(carousel);
+cardHoverEffect(cardImages);
