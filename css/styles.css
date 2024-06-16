@@ -65,7 +65,7 @@ body {
   --white: #f7f7f7;
   --light-grey: #e4e4e4;
   --turquoise: #40c0b0;
-  --dark-green: #081d21;
+  --dark-blue: #013f46;
   --black: #202020;
   --black-light-opacity: rgba(32, 32, 32, 0.7);
   --black-low-opacity: rgba(32, 32, 32, 0.4);
@@ -92,6 +92,7 @@ body {
   --border-radius-2: 2px;
   --btn-shadow: 2px 2px 4px var(--black);
   --transition: all 0.3s ease;
+  --max-width-desktop: 88.125rem;
 }
 
 /* ---icon--- */
@@ -144,7 +145,7 @@ p {
 /* --------------- header ----------------- */
 .header-nav {
   display: flex;
-  max-width: 88.125rem;
+  max-width: var(--max-width-desktop);
   margin-inline: auto;
   padding: 1rem 10px;
   align-items: center;
@@ -272,8 +273,14 @@ p {
 }
 
 /* ---------main content --------- */
-.content {
+.index-content {
   background-color: var(--light-grey);
+}
+
+.page-content {
+  header {
+    background-color: var(--dark-blue);
+  }
 }
 
 /*--- Latest posts ---*/
@@ -282,7 +289,7 @@ p {
   display: flex;
   flex-direction: column;
   padding: 3rem 0;
-  max-width: 88.125rem;
+  max-width: var(--max-width-desktop);
   margin-inline: auto;
   width: fit-content;
 }
@@ -299,7 +306,7 @@ p {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  max-width: 88.125rem;
+  max-width: var(--max-width-desktop);
   margin-inline: auto;
 }
 
@@ -336,7 +343,7 @@ p {
   flex-direction: column;
   position: relative;
   gap: 1rem;
-  max-width: 88.125rem;
+  max-width: var(--max-width-desktop);
   margin: 0 auto;
   padding: 3rem 2rem;
 }
@@ -438,7 +445,7 @@ footer {
 .footer {
   display: flex;
   flex-direction: column;
-  max-width: 88.125rem;
+  max-width: var(--max-width-desktop);
   width: 100%;
   margin-inline: auto;
 }

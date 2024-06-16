@@ -21,7 +21,7 @@
     <title>Articles | Out 'n About</title>
   </head>
   <body>
-    <div>
+    <div class="page-content">
       <div>
         <header>
           <nav class="header-nav">
@@ -36,7 +36,7 @@
                   src="../assets/logo/logo-orange.svg"
                   alt="logo inside a orange rotated square, with o and a in big letters, rest of letters are written beside them in small letters"
               /></a>
-              <a href="/"><img class="logo logo-text" src="../assets/logo/logo-name.svg" alt="written logo in big capitals" /></a>
+              <a href="/"><img class="logo logo-text" src="../assets/logo/logo-name-white.svg" alt="written logo in big capitals" /></a>
             </figure>
             <div class="nav-links-right">
               <a href="../articles/index.html" class="nav-link articles">Articles</a>
@@ -55,17 +55,142 @@
               <a href="../contact/index.html" class="mobile-nav-link">contact</a>
             </nav>
             <div class="some-icons-container">
-              <a href="https://www.facebook.com" class="mobile-some-link"><span>facebook</span><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com" class="mobile-some-link"><span>instagram</span><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.twitter.com" class="mobile-some-link"><span>twitter</span><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="https://www.github.com/torehirth" class="mobile-some-link"><span>github</span><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.facebook.com" target="_blank" class="mobile-some-link"
+                ><span>facebook</span><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com" target="_blank" class="mobile-some-link"
+                ><span>instagram</span><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.twitter.com" target="_blank" class="mobile-some-link"
+                ><span>twitter</span><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="https://www.github.com/torehirth" target="_blank" class="mobile-some-link"
+                ><span>github</span><i class="fa-brands fa-github"></i
+              ></a>
             </div>
           </aside>
         </header>
       </div>
     </div>
-    <main class="content" id="main-content">
-      <h1>main content</h1>
+    <main>
+      <section>
+        <h1>main content</h1>
+        <div class="posts-wrapper" id="posts-wrapper"></div>
+      </section>
+      <!---------------- Carousel ---------------->
+      <section class="popular-post-section">
+        <div class="post-carousel-wrapper">
+          <h2>popular posts</h2>
+          <button class="carousel-arrow-left" id="prev-btn"><span class="material-symbols-sharp size-32">keyboard_arrow_left</span></button>
+          <button class="carousel-arrow-right" id="next-btn"><span class="material-symbols-sharp size-32">keyboard_arrow_right</span></button>
+          <div class="post-carousel" id="post-carousel">
+            <figure class="post-carousel-card">
+              <img src="" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/daniel-frank-R5CpX0Ktrzs-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/luca-bravo-ESkw2ayO2As-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/john-towner-JgOeRuGD_Y4-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/diego-jimenez-A-NVHPka9Rk-unsplash (Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/daniel-frank-R5CpX0Ktrzs-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/hendrik-morkel-KA3gQ2vWmT0-unsplash-qhd-lossy.webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/luca-bravo-ESkw2ayO2As-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/john-towner-JgOeRuGD_Y4-unsplash(Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+            <figure class="post-carousel-card">
+              <img src="../assets/img/diego-jimenez-A-NVHPka9Rk-unsplash (Large).webp" alt="" />
+              <div class="post-carousel-card-copy">
+                <h4>title</h4>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, id!</p>
+                <a href="" class="read-more-btn">read more</a>
+              </div>
+            </figure>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="footer">
