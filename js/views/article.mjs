@@ -15,4 +15,4 @@ import { fetchPost } from "../api/fetchPost.mjs";
 
 const postWrapper = document.querySelector("#post-wrapper");
 
-// fetchPost(postWrapper);
+fetchPost(postWrapper);

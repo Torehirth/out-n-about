@@ -9,7 +9,6 @@ scrollCarouselByClick();
 scrollCarouselByDrag(carousel);
 cardHoverEffect(cardImages);
 
-
 import { message } from "../components/message.mjs";
 import { allPostsURL } from "../data/constants.mjs";
 
@@ -33,16 +32,10 @@ postWrapper.innerHTML = "";
 
 function displayPosts(posts, container) {
   posts.forEach((post) => {
-    // Checking for image URL existence, replace with placeholder if not found
-    const imgSrc =
-      post.yoast_head_json && post.yoast_head_json.og_image
-        ? post.yoast_head_json.og_image[0].url
-        : "../assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp";
-
     container.innerHTML += `
                              <div>
-                                <a href="../article/index.html" class="card-container">
-                                 <img src="${imgSrc}" alt="" class="card-img" />
+                                <a href="" class="card-container">
+                                 <img src="${post.fimg_url}" alt="" class="card-img" />
                                   <div class="card-copy">
                                     <h3>${post.title.rendered}</h3>
                                     <p>${post.excerpt.rendered}</p>

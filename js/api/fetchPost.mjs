@@ -10,8 +10,7 @@ export async function fetchPost(container) {
     // document.location.href= "/";
   }
 
-  const postURL = `${allPostsURL}?id=${id}`;
-  // const postURL = `https://cors.noroff.dev/${allPostsURL}?id=${id}`;
+  const postURL = `${allPostsURL}/${id}`;
 
   try {
     const response = await fetch(postURL);
@@ -35,7 +34,7 @@ function displayPost(post, container) {
 
   container.innerHTML += `
                              <div>
-                                <a href="../article/index.html" class="card-container">
+                                <a href="#" class="card-container">
                                  <img src="${post[0].yoast_head_json.og_image[0].url}" alt="" class="card-img" />
                                   <div class="card-copy">]
                                     <h3>${post[0].title.rendered}</h3>
