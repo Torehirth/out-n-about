@@ -1,6 +1,14 @@
 import { toggleMobileNav } from "../ui/toggleMobileNav.mjs";
+import { scrollCarouselByClick } from "../components/scrollCarouselByClick.mjs";
+import { scrollCarouselByDrag } from "../components/scrollCarouselByDrag.mjs";
+import { carousel, cardImages } from "../data/constants.mjs";
+import { cardHoverEffect } from "../utils/cardHoverEffect.mjs";
 
 toggleMobileNav();
+scrollCarouselByClick();
+scrollCarouselByDrag(carousel);
+cardHoverEffect(cardImages);
+
 
 import { message } from "../components/message.mjs";
 import { allPostsURL } from "../data/constants.mjs";
@@ -8,7 +16,6 @@ import { allPostsURL } from "../data/constants.mjs";
 export async function fetchPosts(container) {
   try {
     const response = await fetch(allPostsURL);
-
     if (!response.ok) {
       throw new Error("there was an error fetching the posts");
     }
@@ -21,7 +28,8 @@ export async function fetchPosts(container) {
 }
 
 const postWrapper = document.querySelector("#posts-wrapper");
-console.log();
+
+postWrapper.innerHTML = "";
 
 function displayPosts(posts, container) {
   posts.forEach((post) => {
@@ -31,21 +39,23 @@ function displayPosts(posts, container) {
         ? post.yoast_head_json.og_image[0].url
         : "../assets/img/clement-delhaye-cnluLIyhpBA-unsplash-qhd-lossy.webp";
 
-    container.innerHTML += `<div class="card-container">
-            <img src="${imgSrc}" alt="" class="card-img" />
-            <div class="card-copy">
-              <h3>${post.title.rendered}</h3>
-              <p>${post.excerpt.rendered}</p>
-            </div>
-          </div>`;
+    container.innerHTML += `
+                             <div>
+                                <a href="../article/index.html" class="card-container">
+                                 <img src="${imgSrc}" alt="" class="card-img" />
+                                  <div class="card-copy">
+                                    <h3>${post.title.rendered}</h3>
+                                    <p>${post.excerpt.rendered}</p>
+                                  </div>
+                                </a>
+                              </div>
+                            `;
   });
 }
 
 async function handlePosts(container) {
   try {
     const posts = await fetchPosts(container);
-    console.log(posts);
-
     displayPosts(posts, container);
   } catch (error) {
     console.error(error);
@@ -54,3 +64,5 @@ async function handlePosts(container) {
 }
 
 handlePosts(postWrapper);
+
+console.log(document.title);
