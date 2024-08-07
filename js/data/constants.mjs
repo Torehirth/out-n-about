@@ -11,4 +11,4 @@ export const carousel = document.querySelector("#post-carousel");
 export const cards = Array.from(carousel.children); // extracting cards (children) from carousel (parent) in an array
 export const cardImages = document.querySelectorAll(".post-carousel-card img");
 // --- API ---
-export const allPostsURL = "https://exam.torehirth.no/wp-json/wp/v2/posts";
+export const allPostsURL = "https://exam.torehirth.no/wp-json/wp/v2/posts?_embed";

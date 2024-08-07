@@ -32,10 +32,12 @@ postWrapper.innerHTML = "";
 
 function displayPosts(posts, container) {
   posts.forEach((post) => {
+    console.log(post);
+
     container.innerHTML += `
                              <div>
                                 <a href="" class="card-container">
-                                 <img src="${post.fimg_url}" alt="" class="card-img" />
+                                 <img src="${post._embedded["wp:featuredmedia"][0].link}" alt="" class="card-img" />
                                   <div class="card-copy">
                                     <h3>${post.title.rendered}</h3>
                                     <p>${post.excerpt.rendered}</p>
