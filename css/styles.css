@@ -459,8 +459,8 @@ p {
   justify-content: center;
   align-items: center;
   padding: 12px 25px;
-  background-color: var(--black);
-  color: var(--orange);
+  background-color: var(--orange);
+  color: var(--black);
   letter-spacing: 1px;
   font-weight: 500;
   border-radius: var(--border-radius-2);
@@ -470,8 +470,8 @@ p {
 
 .card-btn:active,
 .card-btn:hover {
-  background-color: var(--orange);
-  color: var(--black);
+  background-color: var(--dark-blue);
+  color: var(--orange);
   transition: var(--transition);
 }
 
@@ -546,9 +546,9 @@ p {
   position: absolute;
   top: 125%;
   cursor: pointer;
-  color: var(--orange);
+  color: var(--black);
   padding: 2rem 1rem;
-  background-color: var(--black);
+  background-color: var(--orange);
   opacity: 0.9;
   border: none;
   border-radius: var(--border-radius-2);
@@ -570,8 +570,8 @@ p {
 .carousel-arrow-right:active,
 .carousel-arrow-left:active {
   opacity: 1;
-  color: var(--black);
-  background-color: var(--orange);
+  color: var(--orange);
+  background-color: var(--dark-blue);
 }
 
 /* ---- Intro section ---- */
@@ -604,7 +604,8 @@ p {
 footer {
   margin-top: auto;
   display: flex;
-  background-color: var(--light-grey);
+  /* background-color: var(--black); */
+  background-color: var(--dark-blue);
 }
 
 .footer {
@@ -619,7 +620,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: solid 1px var(--black-low-opacity);
+  border-bottom: solid 1px var(--white);
   padding: 16px 10px;
 }
 
@@ -644,6 +645,7 @@ footer {
   display: flex;
   padding: 6px 16px;
   position: relative;
+  color: var(--white);
 }
 
 .right-container {
@@ -665,6 +667,7 @@ footer {
   font-size: var(--text-size-14);
   text-transform: capitalize;
   text-align: center;
+  color: var(--white);
 }
 
 .some-icons-container {
@@ -674,8 +677,14 @@ footer {
   gap: 1rem;
 }
 
+.white-icon {
+  color: var(--white);
+}
+
 .some-link:active,
-.some-link:hover {
+.some-link:hover,
+.white-icon:active,
+.white-icon:hover {
   color: var(--orange);
   transition: var(--transition);
   font-size: 1.375rem;
@@ -698,27 +707,29 @@ footer {
 }
 
 .arrow-up {
-  border: var(--black-border);
-  color: var(--black);
+  border: var(--white-border);
+  color: var(--white);
   border-radius: var(--border-radius-2);
 }
 
 .arrow-up:hover,
 .arrow-up:active {
-  border-radius: var(--border-radius-2);
   border: solid 2px var(--orange);
-  transition: var(--transition);
+  color: var(--orange);
 }
 
 .top-btn ~ p {
   text-transform: capitalize;
   font-size: var(--text-size-14);
   font-weight: 500;
+  color: var(--white);
 }
 
 .copyright {
   font-family: var(--serif-font);
-  font-size: var(--text-size-14);
+  font-size: var(--text-size-12);
+  letter-spacing: var(--letter-space-2);
+  color: var(--white);
   opacity: 0.8;
   text-align: center;
   padding: 1rem 10px;
