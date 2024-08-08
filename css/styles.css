@@ -565,10 +565,6 @@ p {
   top: 50%;
 }
 
-.carousel-arrow {
-  color: var(--black);
-}
-
 .carousel-arrow-left {
   left: 0;
 }
