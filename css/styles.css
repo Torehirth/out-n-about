@@ -92,7 +92,7 @@ body {
   --max-width-desktop: 88.125rem;
 }
 
-/* ---icon--- */
+/* ---icons and symbols--- */
 .material-symbols-sharp {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
   font-optical-sizing: auto;
@@ -102,6 +102,11 @@ span.size-32 {
   font-size: 32px;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 32;
 }
+
+/* .font-weight-7:hover,
+.font-weight-7:active {
+  font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 24;
+} */
 
 /* ---Text--- */
 h1,
@@ -533,8 +538,7 @@ p {
 
 .plain-text-btn:hover,
 .plain-text-btn:active {
-  font-weight: 700;
-  /* color: var(--orange); */
+  font-weight: 600;
 }
 
 .carousel-arrow-right,
@@ -593,6 +597,7 @@ p {
   flex-direction: column;
   gap: 1rem;
   max-width: 800px;
+  font-size: var(--link-size);
 }
 
 /* --------- Footer --------- */
