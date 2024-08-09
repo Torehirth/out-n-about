@@ -52,10 +52,13 @@ html {
 }
 
 body {
-  background-color: var(--black);
   display: flex;
   flex-direction: column;
   min-height: 100%;
+}
+
+.body-index {
+  background-color: var(--black);
 }
 
 /* Section colour */
@@ -404,7 +407,7 @@ p {
 
 .page-content {
   header {
-    background-color: var(--dark-blue);
+    background-color: var(--black);
   }
 }
 
