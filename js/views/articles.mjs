@@ -30,28 +30,73 @@ const postWrapper = document.querySelector("#posts-wrapper");
 
 postWrapper.innerHTML = "";
 
-function displayPosts(posts, container) {
-  posts.forEach((post) => {
-    console.log(post);
+// export function displayPosts(posts, container) {
+//   posts.forEach((post) => {
+//     console.log(post);
 
-    // replaces the html tags in the excerpt with an empty string
+//     // replaces the html tags in the excerpt with an empty string
+//     const cleanText = post.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, "");
+
+//     container.innerHTML += `
+//                             <a href="../article/index.html?id=${post.id}">
+//                               <div class="article-card">
+//                                 <img src="${post._embedded["wp:featuredmedia"][0].link}" alt="" class="article-card-img" />
+//                                 <div class="article-card-copy">
+//                                   <h4>${post.title.rendered}</h4>
+//                                   <p>${cleanText}</p>
+//                                 </div>
+//                               </div>
+//                             </a>
+//                          `;
+//   });
+// }
+
+export function displayPosts(posts, container) {
+  posts.forEach((post) => {
     const cleanText = post.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, "");
 
-    container.innerHTML += `
-                            <a href="../article/index.html?id=${post.id}">
-                              <div class="article-card">
-                                <img src="${post._embedded["wp:featuredmedia"][0].link}" alt="" class="article-card-img" />
-                                <div class="article-card-copy">
-                                  <h4>${post.title.rendered}</h4>
-                                  <p>${cleanText}</p>
-                                </div>
-                              </div>
-                            </a>
-                         `;
+    const a = document.createElement("a");
+    a.href = `../article/index.html?id=${post.id}`;
+
+    const articleCard = document.createElement("div");
+    articleCard.classList.add("article-card");
+
+    // Error handling for featured media
+    if (post._embedded && post._embedded["wp:featuredmedia"] && post._embedded["wp:featuredmedia"][0] && post._embedded["wp:featuredmedia"][0].link) {
+      const img = document.createElement("img");
+      img.src = post._embedded["wp:featuredmedia"][0].link;
+      img.alt = "";
+      img.classList.add("article-card-img");
+      articleCard.appendChild(img);
+    } else {
+      console.error("Missing or invalid featured media for post:", post);
+      // adding a placeholder image if the featured media is missing
+      const img = document.createElement("img");
+      img.src = "../assets/img/image-2935360_1280.webp";
+      img.alt = "no image available";
+      img.classList.add("article-card-img");
+      articleCard.appendChild(img);
+    }
+
+    const articleCardCopy = document.createElement("div");
+    articleCardCopy.classList.add("article-card-copy");
+
+    const h4 = document.createElement("h4");
+    h4.textContent = post.title.rendered;
+
+    const p = document.createElement("p");
+    p.textContent = cleanText;
+
+    articleCardCopy.appendChild(h4);
+    articleCardCopy.appendChild(p);
+
+    articleCard.appendChild(articleCardCopy);
+    a.appendChild(articleCard);
+    container.appendChild(a);
   });
 }
 
-async function handlePosts(container) {
+export async function handlePosts(container) {
   try {
     const posts = await fetchPosts(container);
     displayPosts(posts, container);
