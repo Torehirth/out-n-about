@@ -34,17 +34,20 @@ function displayPosts(posts, container) {
   posts.forEach((post) => {
     console.log(post);
 
+    // replaces the html tags in the excerpt with an empty string
+    const cleanText = post.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, "");
+
     container.innerHTML += `
-                             <div>
-                                <a href="" class="card-container">
-                                 <img src="${post._embedded["wp:featuredmedia"][0].link}" alt="" class="card-img" />
-                                  <div class="card-copy">
-                                    <h3>${post.title.rendered}</h3>
-                                    <p>${post.excerpt.rendered}</p>
-                                  </div>
-                                </a>
+                            <a href="../article/index.html?id=${post.id}">
+                              <div class="article-card">
+                                <img src="${post._embedded["wp:featuredmedia"][0].link}" alt="" class="article-card-img" />
+                                <div class="article-card-copy">
+                                  <h4>${post.title.rendered}</h4>
+                                  <p>${cleanText}</p>
+                                </div>
                               </div>
-                            `;
+                            </a>
+                         `;
   });
 }
 
