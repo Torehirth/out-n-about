@@ -21,77 +21,141 @@
     <title>Contact | Out 'n About</title>
   </head>
   <body>
-    <div>
+    <div class="page-content">
       <div>
         <header>
           <nav class="header-nav">
             <div class="nav-links-left">
-              <a href="../contact/index.html" class="nav-link">Contact</a>
-              <a href="../about/index.html" class="nav-link">about</a>
+              <a href="../contact/index.html" class="nav-link current-page" title="contact me">Contact</a>
+              <a href="../about/index.html" class="nav-link" title="about me">about</a>
             </div>
             <figure class="logo-container">
-              <a href="/"
+              <a href="/" title="home" class="logo-colour"
                 ><img
                   class="logo"
                   src="../assets/logo/logo-orange.svg"
                   alt="logo inside a orange rotated square, with o and a in big letters, rest of letters are written beside them in small letters"
               /></a>
-              <a href="/"><img class="logo logo-text" src="../assets/logo/logo-name.svg" alt="written logo in big capitals" /></a>
+              <a href="/" title="home" class="logo-colour"
+                ><img class="logo logo-text" src="../assets/logo/logo-name-white.svg" alt="written logo in big capitals"
+              /></a>
             </figure>
             <div class="nav-links-right">
-              <a href="../articles/index.html" class="nav-link articles">Articles</a>
-              <a href="/" class="nav-link home current-page">Home</a>
-              <a href="" class="nav-link zero-padding search-icon"><span class="material-symbols-sharp size-32">search</span></a>
-              <button class="hamburger">
+              <a href="../articles/index.html" class="nav-link articles" title="articles">Articles</a>
+              <a href="/" class="nav-link home" title="home">Home</a>
+              <a href="" class="nav-link zero-padding search-icon" title="search"><span class="material-symbols-sharp size-32">search</span></a>
+              <button class="hamburger" title="hamburger menu" type="menu" hidden>
                 <div class="hamburger-bar"></div>
               </button>
             </div>
           </nav>
           <aside class="mobile-nav">
             <nav class="mobile-nav-links">
-              <a href="/" class="mobile-nav-link current-mobile-page">home</a>
+              <a href="/" class="mobile-nav-link">home</a>
               <a href="../articles/index.html" class="mobile-nav-link">articles</a>
               <a href="../about/index.html" class="mobile-nav-link">about</a>
-              <a href="../contact/index.html" class="mobile-nav-link">contact</a>
+              <a href="../contact/index.html" class="mobile-nav-link current-page">contact</a>
             </nav>
             <div class="some-icons-container">
-              <a href="https://www.facebook.com" class="mobile-some-link"><span>facebook</span><i class="fa-brands fa-facebook"></i></a>
-              <a href="https://www.instagram.com" class="mobile-some-link"><span>instagram</span><i class="fa-brands fa-instagram"></i></a>
-              <a href="https://www.twitter.com" class="mobile-some-link"><span>twitter</span><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="https://www.github.com/torehirth" class="mobile-some-link"><span>github</span><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.facebook.com" target="_blank" class="mobile-some-link" title="facebook"
+                ><span>facebook</span><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com" target="_blank" class="mobile-some-link" title="instagram"
+                ><span>instagram</span><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.twitter.com" target="_blank" class="mobile-some-link" title="twitter"
+                ><span>twitter</span><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="https://www.github.com/torehirth" target="_blank" class="mobile-some-link" title="github"
+                ><span>github</span><i class="fa-brands fa-github"></i
+              ></a>
             </div>
           </aside>
         </header>
       </div>
     </div>
-    <main class="content" id="main-content">
-      <h1>main content</h1>
+    <main class="white-section">
+      <section>
+        <div class="contact-top-img">
+          <div class="top-heading-container">
+            <h1 class="main-heading black-heading">contact me</h1>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="form-container">
+          <div class="form-heading-container">
+            <h1>reach out to me!</h1>
+            <h5>
+              Fill in the form below if you want help with a route, a tip about equipment or just a friendly chat.
+              <br />
+              I’ll get right back to you as soon as possible.
+            </h5>
+            <p>(Required fields are marked with an asterisk<span>*)</span></p>
+          </div>
+          <div>
+            <form action="" id="form" class="form-wrapper">
+              <div class="label-wrapper">
+                <label for="name">Name<span>*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your name.." title="Please fill in your name" required />
+                <div class="form-validation-message"></div>
+              </div>
+              <div class="label-wrapper">
+                <label for="email">Email<span>*</span></label>
+                <input type="email" id="email" name="email" placeholder="Your email.." title="Please fill in your email" required />
+                <div class="form-validation-message">Please fill in email address</div>
+              </div>
+              <div class="label-wrapper">
+                <label for="subject">Subject<span>*</span></label>
+                <input type="text" id="subject" name="subject" placeholder="Subject.." title="Please fill in the subject" required />
+                <div class="form-validation-message"></div>
+              </div>
+              <div class="label-wrapper">
+                <label for="message">Message<span>*</span></label>
+                <textarea id="message" name="message" placeholder="your message.." title="Please fill in your message" required></textarea>
+                <div class="form-validation-message"></div>
+              </div>
+              <button type="submit" value="Submit" title="submit">send message</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="footer">
         <div class="first-footer">
           <div class="left-container">
-            <a href="/" class="footer-logo"><img src="../assets/logo/logo-without-frame.svg" alt="logo without orange frame" /></a>
+            <a href="/" class="footer-logo logo-colour"
+              ><img src="../assets/logo/logo-without-frame-white.svg" alt="logo without orange frame" title="home"
+            /></a>
             <nav class="footer-nav">
-              <a href="" class="footer-nav-link current-page">home</a>
-              <a href="" class="footer-nav-link">articles</a>
-              <a href="" class="footer-nav-link">about</a>
-              <a href="" class="footer-nav-link">contact</a>
+              <a href="/" class="footer-nav-link" title="home">home</a>
+              <a href="../articles/index.html" class="footer-nav-link" title="articles">articles</a>
+              <a href="../about/index.html" class="footer-nav-link" title="about me">about</a>
+              <a href="../contact/index.html" class="footer-nav-link current-page" title="contact me">contact</a>
             </nav>
           </div>
           <div class="right-container">
             <div class="some-container">
               <p>follow me</p>
               <div class="some-icons-container">
-                <a href="https://www.facebook.com" class="some-link"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com" class="some-link"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.twitter.com" class="some-link"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.github.com/torehirth" class="some-link"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.facebook.com" target="_blank" title="facebook" class="some-link"
+                  ><i class="fa-brands fa-facebook white-icon"></i
+                ></a>
+                <a href="https://www.instagram.com" target="_blank" title="instagram" class="some-link"
+                  ><i class="fa-brands fa-instagram white-icon"></i
+                ></a>
+                <a href="https://www.twitter.com" target="_blank" title="twitter" class="some-link"
+                  ><i class="fa-brands fa-x-twitter white-icon"></i
+                ></a>
+                <a href="https://www.github.com/torehirth" target="_blank" title="github" class="some-link"
+                  ><i class="fa-brands fa-github white-icon"></i
+                ></a>
               </div>
             </div>
             <div class="top-btn-container">
               <div class="top-btn">
-                <a href="#"><span class="material-symbols-sharp size-32 arrow-up"> keyboard_arrow_up</span></a>
+                <a href="#" title="to top"><span class="material-symbols-sharp size-32 arrow-up"> keyboard_arrow_up</span></a>
               </div>
               <p>top</p>
             </div>
