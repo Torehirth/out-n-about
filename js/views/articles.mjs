@@ -30,30 +30,11 @@ const postWrapper = document.querySelector("#posts-wrapper");
 
 postWrapper.innerHTML = "";
 
-// export function displayPosts(posts, container) {
-//   posts.forEach((post) => {
-//     console.log(post);
-
-//     // replaces the html tags in the excerpt with an empty string
-//     const cleanText = post.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, "");
-
-//     container.innerHTML += `
-//                             <a href="../article/index.html?id=${post.id}">
-//                               <div class="article-card">
-//                                 <img src="${post._embedded["wp:featuredmedia"][0].link}" alt="" class="article-card-img" />
-//                                 <div class="article-card-copy">
-//                                   <h4>${post.title.rendered}</h4>
-//                                   <p>${cleanText}</p>
-//                                 </div>
-//                               </div>
-//                             </a>
-//                          `;
-//   });
-// }
-
 export function displayPosts(posts, container) {
   posts.forEach((post) => {
-    const cleanText = post.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, "");
+    // the first replaces the html tags in excerpt with an empty string, the second replaces the html entity &#8217; with an apostrophe
+    const cleanHeadline = post.title.rendered.replace(/<\/?[^>]+(>|$)/g, "").replace(/&#8217;/g, "'");
+    const cleanText = post.excerpt.rendered.replace(/<\/?[^>]+(>|$)/g, "").replace(/&#8217;/g, "'");
 
     const a = document.createElement("a");
     a.href = `../article/index.html?id=${post.id}`;
@@ -89,7 +70,7 @@ export function displayPosts(posts, container) {
     articleCardCopy.classList.add("article-card-copy");
 
     const h4 = document.createElement("h4");
-    h4.textContent = post.title.rendered;
+    h4.textContent = cleanHeadline;
 
     const paragraphContainer = document.createElement("div");
     paragraphContainer.classList.add("card-p-wrapper");
