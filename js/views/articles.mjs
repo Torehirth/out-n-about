@@ -62,10 +62,16 @@ export function displayPosts(posts, container) {
     articleCard.classList.add("article-card");
 
     // Error handling for featured media
-    if (post._embedded && post._embedded["wp:featuredmedia"] && post._embedded["wp:featuredmedia"][0] && post._embedded["wp:featuredmedia"][0].link) {
+    if (
+      post._embedded &&
+      post._embedded["wp:featuredmedia"] &&
+      post._embedded["wp:featuredmedia"][0] &&
+      post._embedded["wp:featuredmedia"][0].link &&
+      post._embedded["wp:featuredmedia"][0].alt_text
+    ) {
       const img = document.createElement("img");
       img.src = post._embedded["wp:featuredmedia"][0].link;
-      img.alt = "";
+      img.alt = post._embedded["wp:featuredmedia"][0].alt_text;
       img.classList.add("article-card-img");
       articleCard.appendChild(img);
     } else {
@@ -84,15 +90,21 @@ export function displayPosts(posts, container) {
     const h4 = document.createElement("h4");
     h4.textContent = post.title.rendered;
 
+    const paragraphContainer = document.createElement("div");
+    paragraphContainer.classList.add("card-p-wrapper");
+
     const p = document.createElement("p");
     p.textContent = cleanText;
 
     articleCardCopy.appendChild(h4);
-    articleCardCopy.appendChild(p);
+    articleCardCopy.appendChild(paragraphContainer);
+    paragraphContainer.appendChild(p);
 
     articleCard.appendChild(articleCardCopy);
     a.appendChild(articleCard);
     container.appendChild(a);
+
+    console.log(post);
   });
 }
 
