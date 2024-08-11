@@ -72,6 +72,7 @@ export function displayPosts(posts, container) {
       const img = document.createElement("img");
       img.src = post._embedded["wp:featuredmedia"][0].link;
       img.alt = post._embedded["wp:featuredmedia"][0].alt_text;
+      img.title = cleanText;
       img.classList.add("article-card-img");
       articleCard.appendChild(img);
     } else {

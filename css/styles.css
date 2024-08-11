@@ -764,11 +764,6 @@ footer {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* margin: 0 auto; */
-}
-
-.heading-padding {
-  padding: 7.5rem 0 3rem 0;
 }
 
 .top-heading-container {
@@ -835,6 +830,96 @@ footer {
 
 .article-card-copy ~ p {
   line-height: 1.5rem;
+}
+
+/* ------- About me ------- */
+.about-top-img {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/derek-sears-lzeMiXS3UJI-unsplash.jpg);
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.black-heading {
+  color: var(--black);
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 0 8rem 0;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.about-container h1 {
+  text-transform: uppercase;
+}
+
+.about-container img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  line-height: 1.75rem;
+}
+
+.text-wrapper h5 {
+  font-weight: 500;
+}
+
+.image-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.image-wrapper img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.btn-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.reverse-coloured-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 25px;
+  background-color: var(--dark-blue);
+  color: var(--orange);
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-radius: var(--border-radius-2);
+  box-shadow: var(--btn-shadow);
+}
+
+.reverse-coloured-btn:active,
+.reverse-coloured-btn:hover {
+  background-color: var(--orange);
+  color: var(--black);
+  transition: var(--transition);
 }
 
 /* ---- Media 1158px ---- */
