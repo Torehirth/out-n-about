@@ -997,16 +997,25 @@ footer {
 .form-wrapper textarea {
   width: 100%;
   padding: 1.25rem 1rem;
-  border: var(--black-border);
+  background-color: var(--light-grey);
   border-radius: var(--border-radius-2);
   box-shadow: var(--btn-shadow-2);
+  outline: none;
+  border: none;
+  color: var(--black);
 }
 
+.form-wrapper input:focus,
 .form-wrapper textarea:focus {
+  outline: none;
+  background-color: var(--white);
+}
+
+.form-wrapper textarea {
   height: 200px;
 }
 
-.form-wrapper button {
+.submit-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1023,17 +1032,64 @@ footer {
   text-transform: capitalize;
   cursor: pointer;
 }
-.form-wrapper button:hover,
-.form-wrapper button:active {
+.submit-button:hover,
+.submit-button:active {
   background-color: var(--orange);
   color: var(--black);
   transition: var(--transition);
 }
-.form-validation-message {
+
+.form-message {
   display: flex;
   width: 100%;
   color: var(--red);
   padding: 0 1rem;
+}
+
+.form-wrapper .form-error {
+  border: none;
+  box-shadow: 1px 1px 2px 2px var(--red);
+}
+
+.form-wrapper .form-success {
+  border: none;
+  box-shadow: 1px 1px 2px 2px var(--turquoise);
+  background-color: var(--light-grey);
+}
+
+/* ---- form success --- */
+.form-success-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.form-success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  max-width: 100%;
+  padding: 6rem;
+  text-align: center;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.success-icon {
+  background-image: url(../assets/img/check_circle.svg);
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+}
+
+.form-success-container h1 {
+  font-size: var(--big-headline);
 }
 
 /* ---- Media 1158px ---- */

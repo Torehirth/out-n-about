@@ -8,7 +8,7 @@ export const mobileSoMeLinks = document.querySelectorAll(".mobile-social-media-l
 export const prevBtn = document.querySelector("#prev-btn");
 export const nextBtn = document.querySelector("#next-btn");
 export const carousel = document.querySelector("#post-carousel");
-export const cards = Array.from(carousel.children); // extracting cards (children) from carousel (parent) in an array
+export const cards = document.querySelectorAll("#carousel-cards");
 export const cardImages = document.querySelectorAll(".post-carousel-card img");
 // --- API ---
 export const allPostsURL = "https://exam.torehirth.no/wp-json/wp/v2/posts?_embed";

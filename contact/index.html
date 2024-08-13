@@ -16,11 +16,11 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" type="image/icon-x" href="../assets/logo/favicon.ico" />
-    <script type="module" src="../js/views/about.mjs"></script>
+    <script type="module" src="../js/views/contact.mjs"></script>
     <script src="https://kit.fontawesome.com/c4115ef720.js" crossorigin="anonymous"></script>
     <title>Contact | Out 'n About</title>
   </head>
-  <body>
+  <body class="grey-section">
     <div class="page-content">
       <div>
         <header>
@@ -74,15 +74,15 @@
         </header>
       </div>
     </div>
-    <main class="white-section">
-      <section>
+    <main>
+      <section id="heading-section">
         <div class="contact-top-img">
           <div class="top-heading-container">
             <h1 class="main-heading black-heading">contact me</h1>
           </div>
         </div>
       </section>
-      <section>
+      <section id="form-section">
         <div class="form-container">
           <div class="form-heading-container">
             <h1>reach out to me!</h1>
@@ -94,29 +94,38 @@
             <p>(Required fields are marked with an asterisk<span>*)</span></p>
           </div>
           <div>
-            <form action="/" id="form" class="form-wrapper">
+            <form action="" id="form" class="form-wrapper">
               <div class="label-wrapper">
                 <label for="name">Name<span>*</span></label>
                 <input type="text" id="name" name="name" placeholder="Your name.." title="Please fill in your name" />
-                <div class="form-validation-message"></div>
+                <p id="form-message" class="form-message"></p>
               </div>
               <div class="label-wrapper">
                 <label for="email">Email<span>*</span></label>
-                <input type="email" id="email" name="email" placeholder="Your email.." title="Please fill in your email" />
-                <div class="form-validation-message">Please fill in email address</div>
+                <input type="email" id="email" name="email" placeholder="Email address.." title="Please fill in your email" />
+                <span id="form-message" class="form-message"></span>
               </div>
               <div class="label-wrapper">
                 <label for="subject">Subject<span>*</span></label>
                 <input type="text" id="subject" name="subject" placeholder="Subject.." title="Please fill in the subject" />
-                <div class="form-validation-message"></div>
+                <span id="form-message" class="form-message"></span>
               </div>
               <div class="label-wrapper">
                 <label for="message">Message<span>*</span></label>
-                <textarea id="message" name="message" placeholder="your message.." title="Please fill in your message"></textarea>
-                <div class="form-validation-message"></div>
+                <textarea id="message" name="message" placeholder="Your message.." title="Please fill in your message"></textarea>
+                <span id="form-message" class="form-message"></span>
               </div>
-              <button type="submit" value="Submit" title="submit">send message</button>
+              <button id="submit-button" class="submit-button" type="submit" value="Submit" title="submit">send message</button>
             </form>
+          </div>
+        </div>
+      </section>
+      <section id="form-success-section" class="form-success-section is-hidden">
+        <div class="form-success-section">
+          <div class="form-success-container">
+            <div class="success-icon"></div>
+            <h1>thank you for reaching out to me!</h1>
+            <h3>I've received your message and will be in touch shortly.</h3>
           </div>
         </div>
       </section>
