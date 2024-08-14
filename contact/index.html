@@ -20,7 +20,7 @@
     <script src="https://kit.fontawesome.com/c4115ef720.js" crossorigin="anonymous"></script>
     <title>Contact | Out 'n About</title>
   </head>
-  <body class="grey-section">
+  <body id="body" class="grey-section">
     <div class="page-content">
       <div>
         <header>
@@ -94,7 +94,7 @@
             <p>(Required fields are marked with an asterisk<span>*)</span></p>
           </div>
           <div>
-            <form action="" id="form" class="form-wrapper">
+            <form action="https://api.web3forms.com/submit" method="post" id="form" class="form-wrapper">
               <div class="label-wrapper">
                 <label for="name">Name<span>*</span></label>
                 <input type="text" id="name" name="name" placeholder="Your name.." title="Please fill in your name" />
@@ -115,18 +115,26 @@
                 <textarea id="message" name="message" placeholder="Your message.." title="Please fill in your message"></textarea>
                 <span id="form-message" class="form-message"></span>
               </div>
+              <!-- Web3 form html -->
+              <input type="hidden" name="access-key" value="f0739f3d-6c76-4c21-b27a-5ad8c5e93ab8" />
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
+              <!--  -->
               <button id="submit-button" class="submit-button" type="submit" value="Submit" title="submit">send message</button>
             </form>
           </div>
         </div>
       </section>
       <section id="form-success-section" class="form-success-section is-hidden">
-        <div class="form-success-section">
-          <div class="form-success-container">
+        <div class="form-success-container">
+          <div class="success-wrapper">
             <div class="success-icon"></div>
-            <h1>thank you for reaching out to me!</h1>
-            <h3>I've received your message and will be in touch shortly.</h3>
+            <div class="success-text-wrapper">
+              <h1>thank you for reaching out!</h1>
+              <h4>I'll be in touch shortly.</h4>
+            </div>
+            <a href="/" id="modal-home-btn" class="modal-home-btn">home page</a>
           </div>
+          <!-- <button type="button" class="success-exit-btn">&times;</button> -->
         </div>
       </section>
     </main>

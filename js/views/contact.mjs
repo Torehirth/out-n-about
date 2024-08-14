@@ -16,7 +16,7 @@ const submitForm = () => {
 
     // if all inputs are valid, submit the form. If not, display error messages
     validateInputFields();
-    showSuccessMessage();
+    successModalPopup();
   });
 };
 
@@ -95,33 +95,44 @@ submitForm();
 
 // if the form is submitted, clear the form fields
 
-const showSuccessMessage = () => {
-  const headingContainer = document.querySelector("#heading-section");
-  const formSection = document.querySelector("#form-section");
-  const successMessageContainer = document.querySelector(".form-success-section");
+const headingContainer = document.querySelector("#heading-section");
+const formSection = document.querySelector("#form-section");
+const successMessageContainer = document.querySelector(".form-success-section");
+const body = document.querySelector("#body");
 
+const successModalPopup = () => {
   if (
     name.classList.contains("form-success") &&
     email.classList.contains("form-success") &&
     subject.classList.contains("form-success") &&
     message.classList.contains("form-success")
   ) {
-    // Display success message
+    // Display success modal popup
     formSection.style.display = "none";
     headingContainer.style.display = "none";
     successMessageContainer.classList.remove("is-hidden");
-    // successMessageContainer.style.display = "flex";
+    // turn background outside modal dark opacity by adding "darken-background" class and turn body black by adding "black-section" class to the body (for the contrast checker)
+    body.classList.add("darken-background");
+    body.classList.remove("grey-section");
+    body.classList.add("black-section");
 
     // Clear input fields
     form.reset();
-
-    // Optionally, remove success message after a few seconds
-    setTimeout(() => {
-      successMessageContainer.classList.add("is-hidden");
-      // successMessageContainer.style.display = "flex"
-      formSection.style.display = "block";
-      headingContainer.style.display = "block";
-    }, 5000); // 5 seconds
-    // Prevent default form submission (since action is empty)
   }
 };
+
+const exitModalByClick = () => {
+  successMessageContainer.classList.add("is-hidden");
+  formSection.style.display = "block";
+  headingContainer.style.display = "block";
+  body.classList.remove("darken-background");
+  body.classList.remove("black-section");
+  body.classList.add("grey-section");
+};
+
+// Close modal by clicking outside the modal
+window.addEventListener("click", (e) => {
+  if (!successMessageContainer.contains(e.target)) {
+    exitModalByClick();
+  }
+});
