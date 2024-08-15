@@ -631,6 +631,7 @@ footer {
   font-size: var(--link-size);
   letter-spacing: 1px;
   font-weight: 600;
+  border: none;
   border-radius: var(--border-radius-2);
   cursor: pointer;
   box-shadow: var(--btn-shadow-2);
@@ -845,6 +846,16 @@ footer {
 
 .article-card-copy ~ p {
   line-height: 1.5rem;
+}
+
+.load-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* gap: 2rem; */
+  padding: 2rem 0 4rem 0;
+  max-width: var(--max-width-desktop);
+  margin: 0 auto;
 }
 
 /* ------- About me ------- */
