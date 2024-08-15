@@ -1,13 +1,6 @@
 import { toggleMobileNav } from "../ui/toggleMobileNav.mjs";
-import { scrollCarouselByClick } from "../components/scrollCarouselByClick.mjs";
-import { scrollCarouselByDrag } from "../components/scrollCarouselByDrag.mjs";
-import { carousel, cardImages } from "../data/constants.mjs";
-import { cardHoverEffect } from "../utils/cardHoverEffect.mjs";
 
 toggleMobileNav();
-scrollCarouselByClick();
-scrollCarouselByDrag(carousel);
-cardHoverEffect(cardImages);
 
 import { message } from "../components/message.mjs";
 import { allPostsURL } from "../data/constants.mjs";
@@ -28,9 +21,8 @@ export async function fetchPosts(container) {
 
 const postWrapper = document.querySelector("#posts-wrapper");
 
-postWrapper.innerHTML = "";
-
 export function displayPosts(posts, container) {
+  postWrapper.innerHTML = "";
   posts.forEach((post) => {
     // the first replaces the html tags in excerpt with an empty string, the second replaces the html entity &#8217; with an apostrophe
     const cleanHeadline = post.title.rendered.replace(/<\/?[^>]+(>|$)/g, "").replace(/&#8217;/g, "'");
@@ -44,6 +36,7 @@ export function displayPosts(posts, container) {
 
     // Error handling for featured media
     if (
+      // checking if the object has the right path and if the path is not empty
       post._embedded &&
       post._embedded["wp:featuredmedia"] &&
       post._embedded["wp:featuredmedia"][0] &&
@@ -58,7 +51,7 @@ export function displayPosts(posts, container) {
       articleCard.appendChild(img);
     } else {
       console.error("Missing or invalid featured media for post:", post);
-      // adding a placeholder image if the featured media is missing
+      // adding a placeholder image if one of the paths is invalid
       const img = document.createElement("img");
       img.src = "../assets/img/image-2935360_1280.webp";
       img.alt = "no image available";
@@ -85,8 +78,6 @@ export function displayPosts(posts, container) {
     articleCard.appendChild(articleCardCopy);
     a.appendChild(articleCard);
     container.appendChild(a);
-
-    console.log(post);
   });
 }
 
@@ -101,5 +92,3 @@ export async function handlePosts(container) {
 }
 
 handlePosts(postWrapper);
-
-console.log(document.title);

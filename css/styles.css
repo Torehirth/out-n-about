@@ -580,7 +580,7 @@ footer {
   width: 100%;
   align-items: center;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
 }
 
 .news-headline-wrapper a {
@@ -936,6 +936,10 @@ footer {
   background-color: var(--orange);
   color: var(--black);
   transition: var(--transition);
+}
+
+.about-bottom-padding {
+  padding: 0 0 2rem 0;
 }
 
 /* ------- Contact me ------- */
