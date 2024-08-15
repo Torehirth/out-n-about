@@ -95,30 +95,30 @@
           </div>
           <div>
             <form action="https://api.web3forms.com/submit" method="post" id="form" class="form-wrapper">
-              <div class="label-wrapper">
-                <label for="name">Name<span>*</span></label>
-                <input type="text" id="name" name="name" placeholder="Your name.." title="Please fill in your name" />
-                <p id="form-message" class="form-message"></p>
-              </div>
-              <div class="label-wrapper">
-                <label for="email">Email<span>*</span></label>
-                <input type="email" id="email" name="email" placeholder="Email address.." title="Please fill in your email" />
-                <span id="form-message" class="form-message"></span>
-              </div>
-              <div class="label-wrapper">
-                <label for="subject">Subject<span>*</span></label>
-                <input type="text" id="subject" name="subject" placeholder="Subject.." title="Please fill in the subject" />
-                <span id="form-message" class="form-message"></span>
-              </div>
-              <div class="label-wrapper">
-                <label for="message">Message<span>*</span></label>
-                <textarea id="message" name="message" placeholder="Your message.." title="Please fill in your message"></textarea>
-                <span id="form-message" class="form-message"></span>
-              </div>
               <!-- Web3 form html -->
               <input type="hidden" name="access-key" value="f0739f3d-6c76-4c21-b27a-5ad8c5e93ab8" />
               <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
               <!--  -->
+              <div class="label-wrapper">
+                <label for="name">Name<span>*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your name.." title="Please fill in your name" />
+                <p class="form-message"></p>
+              </div>
+              <div class="label-wrapper">
+                <label for="email">Email<span>*</span></label>
+                <input type="email" id="email" name="email" placeholder="Email address.." title="Please fill in your email" />
+                <span class="form-message"></span>
+              </div>
+              <div class="label-wrapper">
+                <label for="subject">Subject<span>*</span></label>
+                <input type="text" id="subject" name="subject" placeholder="Subject.." title="Please fill in the subject" />
+                <span class="form-message"></span>
+              </div>
+              <div class="label-wrapper">
+                <label for="message">Message<span>*</span></label>
+                <textarea id="message" name="message" placeholder="Your message.." title="Please fill in your message"></textarea>
+                <span class="form-message"></span>
+              </div>
               <button id="submit-button" class="submit-button" type="submit" value="Submit" title="submit">send message</button>
             </form>
           </div>
@@ -134,7 +134,7 @@
             </div>
             <a href="/" id="modal-home-btn" class="modal-home-btn">home page</a>
           </div>
-          <!-- <button type="button" class="success-exit-btn">&times;</button> -->
+          <button type="button" class="modal-exit-btn">&times;</button>
         </div>
       </section>
     </main>

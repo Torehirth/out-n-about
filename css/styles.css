@@ -628,8 +628,9 @@ footer {
   padding: 12px 25px;
   background-color: var(--orange);
   color: var(--black);
+  font-size: var(--link-size);
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: var(--border-radius-2);
   cursor: pointer;
   box-shadow: var(--btn-shadow-2);
@@ -921,8 +922,9 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 12px 25px;
-  background-color: var(--dark-blue);
+  background-color: var(--black);
   color: var(--orange);
+  font-size: var(--link-size);
   letter-spacing: 1px;
   font-weight: 500;
   border-radius: var(--border-radius-2);
@@ -1033,21 +1035,21 @@ footer {
   align-items: center;
   width: 100%;
   padding: 17px 30px;
-  background-color: var(--dark-blue);
+  background-color: var(--orange);
   border: none;
   border-radius: var(--border-radius-2);
   box-shadow: var(--btn-shadow-2);
-  color: var(--orange);
+  color: var(--black);
   font-size: var(--link-size);
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: capitalize;
   cursor: pointer;
 }
 .submit-button:hover,
 .submit-button:active {
-  background-color: var(--orange);
-  color: var(--black);
+  background-color: var(--dark-blue);
+  color: var(--orange);
   transition: var(--transition);
 }
 
@@ -1151,6 +1153,20 @@ footer {
   color: var(--orange);
   transition: var(--transition);
   box-shadow: 1px 2px 4px var(--dark-blue);
+}
+
+.modal-exit-btn {
+  padding: 1px 10px;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: 100;
+  background-color: transparent;
+  color: var(--orange);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  cursor: pointer;
 }
 
 /* ---- Media 1158px ---- */
