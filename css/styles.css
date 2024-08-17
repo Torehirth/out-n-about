@@ -421,7 +421,6 @@ footer {
 
 .some-container {
   display: flex;
-
   align-items: center;
   gap: 1rem;
 }
@@ -431,6 +430,7 @@ footer {
   font-size: var(--text-size-14);
   text-transform: none;
   text-align: center;
+  letter-spacing: var(--letter-space-05);
   color: var(--white);
 }
 
