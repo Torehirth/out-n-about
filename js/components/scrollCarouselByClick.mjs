@@ -1,5 +1,5 @@
 import { carousel, prevBtn, nextBtn, cards } from "../data/constants.mjs";
-import { updateCarouselButtonOpacity } from "../utils/updateCarouselButtonOpacity.mjs";
+import { updateCarouselButtonOpacity } from "../ui/updateCarouselButtonOpacity.mjs";
 
 const gap = parseInt(window.getComputedStyle(carousel).gap); // get the gap between the cards
 const cardWidth = cards[0].offsetWidth; // get the width of the card + gap
