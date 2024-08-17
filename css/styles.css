@@ -774,9 +774,13 @@ footer {
 .intro-text-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   max-width: 800px;
   font-size: var(--link-size);
+}
+
+.intro-text-wrapper p:last-child {
+  padding: 0 0 1rem 0;
 }
 
 /* ---------- Articles page ---------- */
