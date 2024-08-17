@@ -20,6 +20,9 @@ export function displayPosts(posts, container) {
       post._embedded &&
       post._embedded["wp:featuredmedia"] &&
       post._embedded["wp:featuredmedia"][0] &&
+      post._embedded["wp:featuredmedia"][0].media_details &&
+      post._embedded["wp:featuredmedia"][0].media_details.sizes &&
+      post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured &&
       post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured.source_url &&
       post._embedded["wp:featuredmedia"][0].alt_text
     ) {
@@ -27,6 +30,7 @@ export function displayPosts(posts, container) {
       img.src = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured.source_url;
       img.alt = post._embedded["wp:featuredmedia"][0].alt_text;
       img.title = cleanText;
+      img.loading = "lazy"; // lazy loading for images on modern browsers
       img.classList.add("article-card-img");
       articleCard.appendChild(img);
     } else {

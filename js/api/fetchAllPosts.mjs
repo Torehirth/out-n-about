@@ -7,7 +7,7 @@ export async function fetchAllPosts(container) {
     const response = await fetch(`${apiUrl}?&per_page=15&_embed`);
 
     if (!response.ok) {
-      throw new Error("there was an error fetching the posts");
+      throw new Error("There was an error fetching the posts");
     }
 
     const posts = await response.json();
