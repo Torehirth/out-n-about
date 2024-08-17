@@ -138,7 +138,7 @@ export const apiUrl = "https://exam.torehirth.no/wp-json/wp/v2/posts";
 // Fetching posts function
 export async function fetchAllPosts(container) {
   try {
-    const response = await fetch(`${apiUrl}?&per_page=100&_embed`);
+    const response = await fetch(`${apiUrl}?&per_page=15&_embed`);
 
     if (!response.ok) {
       throw new Error("there was an error fetching the posts");
@@ -174,11 +174,11 @@ export function displayPosts(posts, container) {
       post._embedded &&
       post._embedded["wp:featuredmedia"] &&
       post._embedded["wp:featuredmedia"][0] &&
-      post._embedded["wp:featuredmedia"][0].link &&
+      post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured.source_url &&
       post._embedded["wp:featuredmedia"][0].alt_text
     ) {
       const img = document.createElement("img");
-      img.src = post._embedded["wp:featuredmedia"][0].link;
+      img.src = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured.source_url;
       img.alt = post._embedded["wp:featuredmedia"][0].alt_text;
       img.title = cleanText;
       img.classList.add("article-card-img");
@@ -221,6 +221,8 @@ let currentIndex = 0;
 export const postsPerPage = 10; // Number of posts to display per page
 export const loadMoreBtn = document.querySelector("#load-btn");
 
+handlePosts(postWrapper);
+
 export async function handlePosts(container) {
   try {
     loadMoreBtn.disabled = true;
@@ -228,7 +230,8 @@ export async function handlePosts(container) {
     if (allPosts.length === 0) {
       allPosts = await fetchAllPosts(container);
     }
-    const postsToDisplay = allPosts.slice(currentIndex, postsPerPage + currentIndex);
+
+    const postsToDisplay = allPosts.slice(currentIndex, currentIndex + postsPerPage);
 
     displayPosts(postsToDisplay, container);
 
@@ -244,9 +247,6 @@ export async function handlePosts(container) {
     container.innerHTML = message("error", "Something went wrong displaying the posts.. Try again shortly!");
   }
 }
-
-loadMoreBtn.addEventListener("click", (e) => {
+loadMoreBtn.addEventListener("click", () => {
   handlePosts(postWrapper);
 });
-
-handlePosts(postWrapper);
