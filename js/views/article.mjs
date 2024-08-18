@@ -35,8 +35,11 @@ const fetchPost = async () => {
 
     const post = await response.json();
 
-    const title = post.title.rendered;
-    document.title = title;
+    // changing the meta title to the article title
+    const postTitle = post.title.rendered;
+    document.title = `${postTitle} | Out 'n About`;
+    // updating the URL pathname with the article title
+    updateUrlWithTitle(postTitle);
 
     return post;
   } catch (error) {
@@ -47,6 +50,13 @@ const fetchPost = async () => {
 
 fetchPost();
 
-// const updatePageTitle = (newTitle) => {
-//   document.title = newTitle;
-// };
+const updateUrlWithTitle = (title) => {
+  // getting the pathname
+  const currentUrl = window.location.pathname;
+  // regex to change out the "%20" with "-"(hyphen)
+  const hyphenatedTitle = title.replace(/\s+/g, "-");
+  // appending the title as a query parameter
+  const updatedUrl = `${currentUrl}?title=${hyphenatedTitle}`;
+  // updates the url pathname without reloading the page
+  history.replaceState(null, " ", updatedUrl);
+};
