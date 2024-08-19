@@ -14,7 +14,7 @@ export function displayPosts(posts, container) {
     const articleCard = document.createElement("div");
     articleCard.classList.add("article-card");
 
-    // Error handling for featured media ?_embed
+    // Error handling for featured media 
     // checking if the object has the right path and if the path is not empty
     if (
       post._embedded &&
