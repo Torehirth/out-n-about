@@ -1208,7 +1208,7 @@ footer {
   gap: 3rem;
   max-width: var(--max-width-desktop);
   margin: 0 auto;
-  padding: 3rem 10px;
+  padding: 0 10px 3rem 10px;
 }
 
 .headline-wrapper {
@@ -1243,10 +1243,6 @@ footer {
   gap: 2rem;
 }
 
-/* .sub-text-wrapper:last-child {
-  padding: 0 0 3rem 0;
-} */
-
 .sub-text-wrapper h3 {
   padding: 0 0 1rem 0;
 }
@@ -1262,6 +1258,13 @@ footer {
   align-items: center;
   max-width: var(--max-width-desktop);
   margin: 2rem auto 4rem auto;
+}
+
+
+.back-btn-wrapper {
+  max-width: var(--max-width-desktop);
+  margin: 3rem auto;
+
 }
 
 /* ----------------------- Media 1158px -------------------- */
