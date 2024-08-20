@@ -26,7 +26,7 @@ const fetchPost = async (container) => {
   }
 
   try {
-    const response = await fetch(`${apiUrl}/${id}?_embed`);
+    const response = await fetch(`${apiUrl}/${id}`);
 
     if (!response.ok) {
       throw new Error("There was an error fetching the post");
@@ -37,7 +37,7 @@ const fetchPost = async (container) => {
     return post;
   } catch (error) {
     console.error(error);
-    container.innerHTML = message("error", "Something went wrong displaying the post.. Try again shortly!");
+    container.innerHTML = message("error", "Something went wrong fetching the post.. Try again shortly!");
   }
 };
 
@@ -67,6 +67,9 @@ export const renderPost = (post, container) => {
   createHeadlineWrapper(container, post);
 
   createImageElement(container, post);
+
+  createSubTextContainer(container);
+  createSubHeadings(container);
   createParagraphs(container);
 
   console.log(post);
@@ -91,67 +94,77 @@ export const createHeadlineWrapper = (container, post) => {
   console.log(headline.textContent);
   console.log(headingParagraph.textContent);
 
-  return headlineWrapper;
+  // return headlineWrapper;
 };
 
 // -------------------------------
 
 export const createImageElement = (container, post) => {
+  const placeholderImg = "../assets/img/placeholder.webp";
+  // using the optional chaining operator (?) after each nested property, it prevents errors if some part of the url/chain returns null or undefined
+  const imageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large?.source_url;
+  const altUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.alt_text;
+
   // create and append img element
   const postImage = document.createElement("img");
   container.appendChild(postImage);
   postImage.classList.add("post-img");
 
-  if (typeof post._embedded !== "object") {
-    console.error("Error: _embedded property is not an object");
-    postImage.src = placeholderImg;
-    postImage.alt = "No image available";
-    return;
-  }
-
-  const placeholderImg = "../assets/img/placeholder.webp";
-  const imageUrl = post._embedded["wp:featuredmedia"]?.[0]?.media_details.sizes.large.source_url;
-  const altUrl = post._embedded["wp:featuredmedia"]?.[0]?.media_details.alt_text;
-
-  //set attributes
+  // set attributes
+  // the logical OR operator (||) returns the first truthy value from left to right.
   postImage.src = imageUrl || placeholderImg;
   postImage.alt = altUrl || "No image available";
 
   postImage.onerror = () => {
-    // onerror event handler in case network or link issue.
-    console.error("Error loading the image", imageUrl);
+    // onerror event handler in case network or url issue.
     postImage.src = placeholderImg;
     postImage.alt = "Image failed to load";
+    console.error("Error loading the image", imageUrl);
   };
 
-  return postImage;
+  // return postImage;
+};
+
+// -------------------------------
+
+export const createSubTextContainer = (container) => {
+  const subTextContainer = document.createElement("div");
+  container.appendChild(subTextContainer);
 };
 
 // -------------------------------
 
 export const createParagraphs = (container) => {
-  //create and append p element
-  const subTextContainer = document.createElement("div");
-  container.appendChild(subTextContainer);
+  //create and append container and p element
 
   const subParagraphs = document.createElement("p");
   container.appendChild(subParagraphs);
 
-  return subTextContainer;
+  // return subTextContainer;
 };
+
+// -------------------------------
+
+export const createSubHeadings = (container) => {};
 
 // -----------------------------------
 
 export const displaySinglePost = async () => {
   // getting json response and assigning it as post
   const post = await fetchPost(postContainer);
+
   // changing the document title to the article title
   const postTitle = post.title.rendered;
   updateDocumentTitle(postTitle);
-  // updating the URL pathname with the article title
-  updateUrlWithTitle(postTitle);
 
-  renderPost(post, postContainer);
+  // updating the URL pathname with the article title
+  // updateUrlWithTitle(postTitle);
+
+  // calls the render post function
+  renderPost(post, postContainer);  
 };
 
 displaySinglePost();
+
+// when page reload (Live Server extension) the updateUrlWithTitle function generates and error by not fetching the post.
+// have to try this when pushed to static host or make error handling or corrections (browser/web safe).
