@@ -14,12 +14,15 @@ export function displayPosts(posts, container) {
     const articleCard = document.createElement("div");
     articleCard.classList.add("article-card");
 
-    // Error handling for featured media
+    // Error handling for featured media 
+    // checking if the object has the right path and if the path is not empty
     if (
-      // checking if the object has the right path and if the path is not empty
       post._embedded &&
       post._embedded["wp:featuredmedia"] &&
       post._embedded["wp:featuredmedia"][0] &&
+      post._embedded["wp:featuredmedia"][0].media_details &&
+      post._embedded["wp:featuredmedia"][0].media_details.sizes &&
+      post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured &&
       post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured.source_url &&
       post._embedded["wp:featuredmedia"][0].alt_text
     ) {
@@ -27,13 +30,14 @@ export function displayPosts(posts, container) {
       img.src = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium_featured.source_url;
       img.alt = post._embedded["wp:featuredmedia"][0].alt_text;
       img.title = cleanText;
+      img.loading = "lazy"; // lazy loading for images on modern browsers
       img.classList.add("article-card-img");
       articleCard.appendChild(img);
     } else {
       console.error("Missing or invalid featured media for post:", post);
       // adding a placeholder image if one of the paths is invalid
       const img = document.createElement("img");
-      img.src = "../assets/img/image-2935360_1280.webp";
+      img.src = "../assets/img/placeholder.webp";
       img.alt = "no image available";
       img.classList.add("article-card-img");
       articleCard.appendChild(img);
