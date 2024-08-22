@@ -1,7 +1,7 @@
-import { successMessageContainer } from "../data/constants.mjs";
+import { successMessageContainer, exitModalButton } from "../data/constants.mjs";
 import { toggleMobileNav } from "../ui/toggleMobileNav.mjs";
 import { submitForm } from "../handler/submitForm.mjs";
-import { exitModal } from "../handler/exitModal.mjs";
+import { exitSuccessModal } from "../handler/exitModal.mjs";
 
 // toggling mobile nav
 toggleMobileNav();
@@ -12,17 +12,16 @@ submitForm();
 // Close modal by clicking outside the modal
 window.addEventListener("click", (event) => {
   if (!successMessageContainer.contains(event.target)) {
-    exitModal();
+    exitSuccessModal();
   }
 });
 
 // Close modal by clicking the X button
-const exitModalButton = document.querySelector(".modal-exit-btn");
-exitModalButton.addEventListener("click", exitModal);
+exitModalButton.addEventListener("click", exitSuccessModal);
 
 // Close modal by pressing the Escape or Enter key
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" || event.key === "Enter") {
-    exitModal();
+    exitSuccessModal();
   }
 });

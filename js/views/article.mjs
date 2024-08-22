@@ -33,7 +33,6 @@ const fetchPost = async (container) => {
     }
 
     const post = await response.json();
-    console.log(post);
 
     return post;
   } catch (error) {
@@ -88,8 +87,8 @@ export const createHeadlineWrapper = (container, post) => {
 export const createImageElement = (container, post) => {
   const placeholderImg = "../assets/img/placeholder.webp";
   // using the optional chaining operator (?) after each nested property, it prevents errors if some part of the url/chain returns null or undefined
-  const imageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large?.source_url;
-  const altUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.alt_text;
+  const imageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+  const altUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.alt_text;
 
   // create and append img element
   const postImage = document.createElement("img");
@@ -123,8 +122,6 @@ export const createSubTextContainer = (container, postContent) => {
   const contentDoc = parser.parseFromString(postContent, "text/html");
   // selects the h3 from the newly created object
   const headings = contentDoc.querySelectorAll("h3");
-
-  console.log(contentDoc);
 
   // loops through each h3 element of the object and stores all of the "p" siblings in the paragraphs array
   headings.forEach((heading) => {
@@ -217,3 +214,72 @@ displaySinglePost();
 
 // when page reload (Live Server extension) the updateUrlWithTitle function generates and error by not fetching the post.
 // have to try this when pushed to static host or make error handling or corrections (browser/web safe).
+
+// -----------  Image modal ----------
+
+const imageModalContainer = document.querySelector("#image-modal");
+
+const createImageModalWrapper = (element) => {
+  element.classList.toggle(".is-hidden");
+
+  const imageModalWrapper = document.createElement("div");
+  element.appendChild(imageModalWrapper);
+  imageModalWrapper.classList.add("image-popup-wrapper");
+
+  return imageModalWrapper;
+};
+
+const createModalImage = async (element) => {
+  const post = await fetchPost(postContainer);
+
+  const modalImage = document.createElement("img");
+  element.appendChild(modalImage);
+  modalImage.classList.add("modal-image");
+  modalImage.src = post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+  modalImage.alt = post?._embedded?.["wp:featuredmedia"]?.[0]?.alt_text;
+
+  return modalImage;
+};
+
+const createImageModalExitButton = (element) => {
+  const modalExitButton = document.createElement("button");
+  element.appendChild(modalExitButton);
+  modalExitButton.classList.add("modal-exit-btn");
+  modalExitButton.classList.add("exit-btn");
+  modalExitButton.setAttribute("type", "button");
+  modalExitButton.innerHTML = "&times;";
+};
+
+export const displayImagePopup = () => {
+  const imageModalWrapper = createImageModalWrapper(imageModalContainer);
+  createModalImage(imageModalWrapper);
+  createImageModalExitButton(imageModalWrapper);
+};
+
+// displayImagePopup();
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const postImage = document.querySelector(".post-img");
+//   console.log(postImage);
+
+//   postImage ? postImage.addEventListener("click", displayImagePopup) : console.log("Image not found in the DOM");
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Check immediately
+//   const postImage = document.querySelector(".post-img");
+
+//   // Retry after a short delay
+//   setTimeout(function () {
+//     postImage = document.querySelector(".post-img");
+//     if (postImage) {
+//       console.log(postImage);
+//       postImage.addEventListener("click", (e) => {
+//         displayImagePopup();
+//         console.log(e.target);
+//       });
+//     } else {
+//       console.log("Image still not found in the DOM.");
+//     }
+//   }, 500); // Adjust delay as needed
+// });

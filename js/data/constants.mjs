@@ -26,4 +26,5 @@ export const headingContainer = document.querySelector("#heading-section");
 export const formSection = document.querySelector("#form-section");
 export const successMessageContainer = document.querySelector(".form-success-section");
 export const body = document.querySelector("#body");
+export const exitModalButton = document.querySelector(".modal-exit-btn");
 // --- Specific blog post page ---
