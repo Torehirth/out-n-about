@@ -28,3 +28,4 @@ export const successMessageContainer = document.querySelector(".form-success-sec
 export const body = document.querySelector("#body");
 export const exitModalButton = document.querySelector(".modal-exit-btn");
 // --- Specific blog post page ---
+export const postContainer = document.querySelector("#blog-post-container");
