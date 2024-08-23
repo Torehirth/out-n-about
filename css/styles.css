@@ -1241,7 +1241,7 @@ footer {
   object-fit: contain;
   filter: drop-shadow(2px 2px 8px var(--black));
   margin: 0 auto 2rem auto;
-  cursor: pointer;
+  cursor: zoom-in;
 }
 
 .sub-text-container {
@@ -1283,24 +1283,22 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 950;
   background-color: var(--black-light-opacity);
   line-height: 0;
   font-size: 0;
-  pointer-events: none;
-  user-select: none;
 }
 
 .image-popup-wrapper {
   position: fixed;
-  width: fit-content;
+  width: 70vw;
   height: fit-content;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -45%);
+  transform: translate(-50%, -50%);
   text-align: center;
   border: 10px solid var(--black);
   border-radius: 5px;
@@ -1310,7 +1308,7 @@ footer {
 
 .modal-image {
   display: block;
-  height: auto;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: 1000;
@@ -1325,6 +1323,12 @@ footer {
   z-index: 1000;
   color: var(--white);
   background-color: var(--black);
+}
+
+.exit-btn:hover,
+.exit-btn:active {
+  color: var(--orange);
+  transition: var(--transition);
 }
 
 /* ----------------------- Media 1158px -------------------- */
