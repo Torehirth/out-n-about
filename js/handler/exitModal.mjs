@@ -1,7 +1,7 @@
 import { body, formSection, headingContainer, successMessageContainer } from "../data/constants.mjs";
 
 // Exit modal function
-export const exitModal = () => {
+export const exitSuccessModal = () => {
   successMessageContainer.classList.add("is-hidden");
   formSection.style.display = "block";
   headingContainer.style.display = "block";

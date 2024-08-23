@@ -33,7 +33,6 @@ const fetchPost = async (container) => {
     }
 
     const post = await response.json();
-    console.log(post);
 
     return post;
   } catch (error) {
@@ -88,8 +87,8 @@ export const createHeadlineWrapper = (container, post) => {
 export const createImageElement = (container, post) => {
   const placeholderImg = "../assets/img/placeholder.webp";
   // using the optional chaining operator (?) after each nested property, it prevents errors if some part of the url/chain returns null or undefined
-  const imageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.sizes?.large?.source_url;
-  const altUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.media_details?.alt_text;
+  const imageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+  const altUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.alt_text;
 
   // create and append img element
   const postImage = document.createElement("img");
@@ -108,7 +107,7 @@ export const createImageElement = (container, post) => {
     console.error("Error loading the image", imageUrl);
   };
 
-  // return postImage;
+  postImage.addEventListener("click", displayImagePopup);
 };
 
 // -------------------------------
@@ -123,8 +122,6 @@ export const createSubTextContainer = (container, postContent) => {
   const contentDoc = parser.parseFromString(postContent, "text/html");
   // selects the h3 from the newly created object
   const headings = contentDoc.querySelectorAll("h3");
-
-  console.log(contentDoc);
 
   // loops through each h3 element of the object and stores all of the "p" siblings in the paragraphs array
   headings.forEach((heading) => {
@@ -217,3 +214,72 @@ displaySinglePost();
 
 // when page reload (Live Server extension) the updateUrlWithTitle function generates and error by not fetching the post.
 // have to try this when pushed to static host or make error handling or corrections (browser/web safe).
+
+// -----------  Image modal ----------
+
+const imageModalContainer = document.querySelector("#image-modal");
+let imageModalWrapper;
+let modalExitButton;
+
+const initializeModal = () => {
+  imageModalWrapper = document.createElement("div");
+  imageModalWrapper.classList.add("image-popup-wrapper");
+
+  modalExitButton = document.createElement("button");
+  modalExitButton.classList.add("modal-exit-btn");
+  modalExitButton.classList.add("exit-btn");
+  modalExitButton.setAttribute("type", "button");
+  modalExitButton.innerHTML = "&times;";
+  imageModalWrapper.appendChild(modalExitButton);
+
+  imageModalContainer.appendChild(imageModalWrapper);
+
+  // closing functionality to the exit button
+  modalExitButton.addEventListener("click", closeImagePopup);
+
+  // closing modal when clicking outside the image or modal wrapper
+  imageModalContainer.addEventListener("click", (event) => {
+    console.log(event.target);
+
+    if (event.target === imageModalContainer || event.target === modalExitButton) {
+      closeImagePopup();
+    }
+  });
+};
+
+export const displayImagePopup = async () => {
+  try {
+    if (!imageModalWrapper || !modalExitButton) {
+      initializeModal();
+    }
+
+    const post = await fetchPost(postContainer); // Fetch post data
+    const imageUrl = post?._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+    const altText = post?._embedded?.["wp:featuredmedia"]?.[0]?.alt_text;
+
+    // clear previous modal content except for the exit button to prevent stacking and visual bugs
+    imageModalWrapper.querySelectorAll("img").forEach((img) => img.remove());
+
+    const modalImage = document.createElement("img");
+    modalImage.classList.add("modal-image");
+    modalImage.src = imageUrl || "";
+    modalImage.alt = altText || "No image available";
+    imageModalWrapper.appendChild(modalImage);
+
+    // show the modal
+    imageModalContainer.classList.remove("is-hidden");
+    imageModalContainer.classList.add("image-modal-container");
+    imageModalContainer.style.display = "flex";
+  } catch (error) {
+    console.error("Error displaying image popup:", error);
+    // display an error message to the user
+    imageModalContainer.innerHTML = "<p>Error loading image. Please try again later.</p>";
+    imageModalContainer.classList.remove("is-hidden");
+    imageModalContainer.style.display = "flex";
+  }
+};
+
+const closeImagePopup = () => {
+  imageModalContainer.classList.add("is-hidden");
+  imageModalContainer.style.display = "none";
+};
