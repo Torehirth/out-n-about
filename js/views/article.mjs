@@ -7,6 +7,12 @@ import { displaySinglePost } from "../ui/displaySinglePost.mjs";
 import { createImageModalElements } from "../components/createImageModalElements.mjs";
 import { displayImagePopup, closeImagePopup } from "../handler/handleImageModal.mjs";
 
+// trying to increase loading speeds in terms of Lighthouse
+import { fetchPost } from "../api/fetchPost.mjs";
+document.addEventListener("DOMContentLoaded", () => {
+  fetchPost();
+});
+
 // mobile hamburger menu
 toggleMobileNav();
 // blog post carousel
