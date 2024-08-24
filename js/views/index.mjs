@@ -8,3 +8,22 @@ toggleMobileNav();
 scrollCarouselByClick();
 scrollCarouselByDrag(carousel);
 cardHoverEffect(cardImages);
+
+// ----------------------- Carousel --------------
+
+export const createSliderCard = (container) => {
+  const outerCardContainer = document.createElement("div");
+  container.appendChild(outerCardContainer);
+
+  const innerCardContainer = document.createElement("div");
+  innerCardContainer.classList.add("carousel-card");
+  outerCardContainer.appendChild(innerCardContainer);
+
+  const cardImage = document.createElement("img");
+  cardImage.classList.add("post-carousel-card-img")
+  // cardImage.src = "";
+  // cardImage.alt = 
+  
+
+  
+};
