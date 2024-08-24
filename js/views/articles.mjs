@@ -1,4 +1,4 @@
-import { toggleMobileNav } from "../ui/toggleMobileNav.mjs";
+import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
 import { handlePosts } from "../handler/handlePosts.mjs";
 import { postWrapper } from "../data/constants.mjs";
 

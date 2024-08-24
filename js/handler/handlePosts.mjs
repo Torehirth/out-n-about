@@ -9,19 +9,21 @@ let allPosts = []; // empty array to store all posts
 let currentIndex = 0; // index to keep track of the current post
 const postsPerPage = 10; // Number of posts to display per page
 const loadMoreBtn = document.querySelector("#load-btn");
+// clear the loading indicator after the posts are loaded.
+postWrapper.innerHTML = "";
 
 export async function handlePosts(container) {
   try {
     loadMoreBtn.disabled = true;
 
     if (allPosts.length === 0) {
-      allPosts = await fetchAllPosts(postWrapper);
+      allPosts = await fetchAllPosts(container);
     }
     // using slice method to set how many posts that are displayed and the next set of posts. It starts from currentIndex and goes up to currentIndex + postPerPage ( 0, 0 + 10 => 10, 10 + 10 .. (in other words: first 0-10 then 10-20 and so on til max posts))
     const postsToDisplay = allPosts.slice(currentIndex, currentIndex + postsPerPage);
 
     // calling the function that render html for the cards
-    displayPosts(postsToDisplay, postWrapper);
+    displayPosts(postsToDisplay, container);
 
     //  after displaying the posts, the currentIndex is incremented by postsPerPage. this updates the index so the next time posts are loaded, it knows where to start
     currentIndex += postsPerPage;
@@ -35,7 +37,7 @@ export async function handlePosts(container) {
     }
   } catch (error) {
     console.error(error);
-    container.innerHTML = message("error", "Something went wrong displaying the posts.. Try again shortly!");
+    postWrapper.innerHTML = message("error", "Something went wrong displaying the posts.. Try again shortly!");
   }
 }
 loadMoreBtn.addEventListener("click", () => {

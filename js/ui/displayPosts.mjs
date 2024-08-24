@@ -3,7 +3,6 @@ import { createPostImage } from "../components/createPostImage.mjs";
 
 // display posts function
 export function displayPosts(posts, container) {
-  container.innerHTML = "";
   posts.forEach((post) => {
     const cleanHeadline = cleanText(post.title.rendered);
     const cleanExcerpt = cleanText(post.excerpt.rendered);
