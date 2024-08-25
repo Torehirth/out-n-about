@@ -1,5 +1,5 @@
 import { successMessageContainer, exitModalButton } from "../data/constants.mjs";
-import { toggleMobileNav } from "../ui/toggleMobileNav.mjs";
+import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
 import { submitForm } from "../handler/submitForm.mjs";
 import { exitSuccessModal } from "../handler/exitModal.mjs";
 

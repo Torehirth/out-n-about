@@ -1,6 +1,6 @@
 import { displayImagePopup } from "../../handler/handleImageModal.mjs";
 
-export const createImageElement = (container, post) => {
+export const createModalImage = (container, post) => {
   const placeholderImg = "../assets/img/placeholder.webp";
   // using the optional chaining operator (?) after each nested property, it prevents errors if some part of the url/chain returns null or undefined
   const imageUrl = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;

@@ -1,10 +1,12 @@
-import { toggleMobileNav } from "../ui/toggleMobileNav.mjs";
-import { scrollCarouselByClick } from "../components/scrollCarouselByClick.mjs";
-import { scrollCarouselByDrag } from "../components/scrollCarouselByDrag.mjs";
-import { carousel, cardImages } from "../data/constants.mjs";
-import { cardHoverEffect } from "../ui/cardHoverEffect.mjs";
+import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
+import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
+import { displayCarousel } from "../handler/displayCarousel.mjs";
+// trying to increase loading speeds in terms of Lighthouse
+document.addEventListener("DOMContentLoaded", () => {
+  fetchAllPosts();
+});
 
 toggleMobileNav();
-scrollCarouselByClick();
-scrollCarouselByDrag(carousel);
-cardHoverEffect(cardImages);
+
+// display carouse
+displayCarousel();

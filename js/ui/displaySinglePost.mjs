@@ -6,6 +6,8 @@ import { updateDocumentTitle, updateUrlWithTitle } from "../helper/updateTitles.
 import { getQueryParameter } from "../helper/getQueryParameter.mjs";
 
 export const displaySinglePost = async (container) => {
+  // clear the loading indicator after the post is loaded.
+  container.innerHTML = "";
   try {
     // getting json response and assigning it as post
     const post = await fetchPost(postContainer);
