@@ -4,8 +4,8 @@ export const scrollCarouselByDrag = (carousel) => {
   let startPosition = 0;
   let startScrollLeft = 0;
 
-  // if isDragging is true, change the cursor to grabbing, else change it to pointer
   const changeCursor = () => {
+    // if isDragging is true, change the cursor to grabbing, else change it to pointer
     carousel.style.cursor = isDragging ? "grabbing" : "pointer";
   };
   // mouse down event listener to start dragging
@@ -30,4 +30,3 @@ export const scrollCarouselByDrag = (carousel) => {
     changeCursor(); // Change cursor back to 'pointer'
   });
 };
-

@@ -1,11 +1,9 @@
 import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
-import { scrollCarouselByClick } from "../handler/scrollCarouselByClick.mjs";
-import { scrollCarouselByDrag } from "../handler/scrollCarouselByDrag.mjs";
-import { carousel, cardImages, postContainer } from "../data/constants.mjs";
-import { cardHoverEffect } from "../ui/cardHoverEffect.mjs";
 import { displaySinglePost } from "../ui/displaySinglePost.mjs";
 import { createImageModalElements } from "../components/createImageModalElements.mjs";
 import { displayImagePopup, closeImagePopup } from "../handler/handleImageModal.mjs";
+import { displayCarousel } from "../handler/displayCarousel.mjs";
+import { postContainer } from "../data/constants.mjs";
 
 // trying to increase loading speeds in terms of Lighthouse
 import { fetchPost } from "../api/fetchPost.mjs";
@@ -15,10 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // mobile hamburger menu
 toggleMobileNav();
-// blog post carousel
-scrollCarouselByClick();
-scrollCarouselByDrag(carousel);
-cardHoverEffect(cardImages);
+// latest blog post carousel
+displayCarousel();
 // display complete post
 displaySinglePost(postContainer);
 // Initialize the modal

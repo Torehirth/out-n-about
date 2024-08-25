@@ -7,8 +7,8 @@ export function displayPosts(posts, container) {
     const cleanHeadline = cleanText(post.title.rendered);
     const cleanExcerpt = cleanText(post.excerpt.rendered);
 
-    const a = document.createElement("a");
-    a.href = `../article/index.html?id=${post.id}`;
+    const postLink = document.createElement("a");
+    postLink.href = `../article/index.html?id=${post.id}`;
 
     const articleCard = document.createElement("div");
     articleCard.classList.add("article-card");
@@ -33,7 +33,7 @@ export function displayPosts(posts, container) {
     paragraphContainer.appendChild(p);
 
     articleCard.appendChild(articleCardCopy);
-    a.appendChild(articleCard);
-    container.appendChild(a);
+    postLink.appendChild(articleCard);
+    container.appendChild(postLink);
   });
 }
