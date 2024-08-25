@@ -5,7 +5,7 @@ School Project exam in front-end development.
 ### Website: 
 [Out 'n About](https://...)
 
-<p align="left"><img height="250px" src="https://github.com/Torehirth/out-n-about/blob/main/assets/img/home-page-screenshot-small-2.png" alt="screenprint of homepage" /></p>
+<p align="left"><img height="250px" src="https://github.com/Torehirth/out-n-about/blob/main/assets/img/screenprint/home-page-screenshot.jpg" alt="screenprint of homepage" /></p>
 
 ### Requirements:
 
