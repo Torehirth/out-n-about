@@ -600,12 +600,31 @@ footer {
   margin-inline: auto;
 }
 
+/* moving the "read more" button on the bottom */
+.news-card-wrapper > :nth-child(2) {
+  order: 2;
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: fit-content;
   max-width: 800px;
+  cursor: pointer;
+}
+
+.card-container:hover,
+.card-container:active {
+  p,
+  h3 {
+    color: var(--black-light-opacity);
+    transition: var(--transition);
+  }
+  .card-img {
+    filter: opacity(0.95);
+    transition: var(--transition);
+  }
 }
 
 .card-img {
@@ -619,9 +638,16 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
   gap: 1rem;
   padding-top: 2rem;
   border-radius: var(--border-radius-2);
+  width: 100%;
+}
+
+.plain-text-btn.news-btn {
+  padding: 0;
+  color: var(--dark-blue);
 }
 
 .card-btn {
@@ -693,7 +719,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 5px 10px;
+  padding: 5px 5px;
 }
 
 .post-carousel-card-copy h4 {
@@ -705,7 +731,7 @@ footer {
 }
 
 .post-date {
-  padding: 8px 10px 5px 10px;
+  padding: 8px 8px 5px;
   font-size: var(--text-size-12);
   font-family: var(--serif-font);
   letter-spacing: var(--letter-space-2);
@@ -724,6 +750,7 @@ footer {
   font-weight: 500;
   text-transform: none;
   padding: 0.5rem;
+  line-height: 0;
 }
 
 .plain-text-btn:hover,
@@ -772,7 +799,7 @@ footer {
   align-items: center;
   text-align: center;
   gap: 2rem;
-  padding: 3rem 0 8rem 0;
+  padding: 4rem 0 4rem 0;
   margin: 0 auto;
   max-width: var(--max-width-desktop);
 }
@@ -862,7 +889,7 @@ footer {
   flex-direction: column;
   text-transform: none;
   gap: 1rem;
-  padding: 1rem 10px 0 10px;
+  padding: 5px 5px 0;
 }
 
 .card-p-wrapper {
@@ -1244,16 +1271,15 @@ footer {
 .headline-wrapper p {
   font-family: var(--heading-font);
   font-size: 1.375rem;
-  /* font-weight: 500; */
   letter-spacing: var(--letter-space-05);
   text-transform: none;
 }
 
 .post-img {
   width: fit-content;
-  max-height: 500px;
+  max-height: 50vh;
   object-fit: contain;
-  filter: drop-shadow(2px 2px 8px var(--black));
+  filter: drop-shadow(1px 1px 3px var(--black));
   margin: 0 auto 2rem auto;
   cursor: zoom-in;
 }
@@ -1316,7 +1342,7 @@ footer {
 
 .image-popup-wrapper {
   position: fixed;
-  width: 70vw;
+  width: fit-content;
   height: fit-content;
   left: 50%;
   top: 50%;
@@ -1330,8 +1356,10 @@ footer {
 
 .modal-image {
   display: block;
-  height: 100%;
-  width: 100%;
+  height: 90vh;
+  /* width: 100%; */
+  /* width: 70vw; */
+
   object-fit: cover;
   z-index: 1000;
   background-color: var(--black);
