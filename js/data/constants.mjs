@@ -4,6 +4,8 @@ export const mobileNav = document.querySelector(".mobile-nav");
 export const navLinks = document.querySelectorAll(".mobile-nav-link");
 export const mobileNavLinks = document.querySelector(".mobile-nav-links");
 export const mobileSoMeLinks = document.querySelectorAll(".mobile-social-media-links");
+// News section
+export const newsWrapper = document.querySelector("#news-wrapper");
 // ---Card carousel---
 export const prevBtn = document.querySelector("#prev-btn");
 export const nextBtn = document.querySelector("#next-btn");

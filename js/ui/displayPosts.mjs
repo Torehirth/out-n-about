@@ -14,7 +14,7 @@ export function displayPosts(posts, container) {
     const articleCard = document.createElement("div");
     articleCard.classList.add("article-card");
 
-    const img = createPostImage(post, "article-card-img");
+    const img = createPostImage(post, "article-card-img", "medium_featured");
     articleCard.appendChild(img);
 
     const postDate = document.createElement("p");

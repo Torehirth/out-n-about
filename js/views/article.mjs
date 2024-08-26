@@ -5,7 +5,7 @@ import { displayImagePopup, closeImagePopup } from "../handler/handleImageModal.
 import { displayCarousel } from "../handler/displayCarousel.mjs";
 import { postContainer } from "../data/constants.mjs";
 
-// trying to increase loading speeds in terms of Lighthouse
+// trying to increase loading speeds in terms of Lighthouse statistics
 import { fetchPost } from "../api/fetchPost.mjs";
 document.addEventListener("DOMContentLoaded", () => {
   fetchPost();
@@ -49,5 +49,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error loading modal elements:", error);
   }
 });
-
-

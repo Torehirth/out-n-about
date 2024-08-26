@@ -36,7 +36,7 @@ export const createSubTextWrapper = (container, heading, paragraphs) => {
   container.appendChild(subTextWrapper);
   subTextWrapper.classList.add("sub-text-wrapper");
 
-  // adds one "h3" heading to the each wrapper,
+  // adds one "h3" heading to each wrapper,
   createSubHeadings(subTextWrapper, heading);
   // adds all the associated "p" elements to the wrapper
   paragraphs.forEach((paragraph) => {
@@ -45,7 +45,7 @@ export const createSubTextWrapper = (container, heading, paragraphs) => {
 };
 
 // creates a h3 element
-// gets called inside createSubTextContainer function.
+// gets called inside createSubTextWrapper function.
 export const createSubHeadings = (container, heading) => {
   // creates and append h3 elements
   const subHeading = document.createElement("h3");
@@ -57,7 +57,7 @@ export const createSubHeadings = (container, heading) => {
 };
 
 //creates paragraph element
-// gets called inside createSubTextContainer function.
+// gets called inside createSubTextWrapper function.
 export const createSubParagraphs = (container, paragraph) => {
   // creates and append p elements
   const subParagraph = document.createElement("p");

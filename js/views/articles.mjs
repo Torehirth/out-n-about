@@ -2,7 +2,7 @@ import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
 import { handlePosts } from "../handler/handlePosts.mjs";
 import { postWrapper } from "../data/constants.mjs";
 
-// trying to increase loading speeds in terms of Lighthouse
+// trying to increase loading speeds in terms of Lighthouse statistics
 import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllPosts();
