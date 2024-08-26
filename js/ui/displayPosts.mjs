@@ -1,5 +1,6 @@
 import { cleanText } from "../components/cleanText.mjs";
 import { createPostImage } from "../components/createPostImage.mjs";
+import { displayDynamicDate } from "../components/displayDynamicDate.mjs";
 
 // display posts function
 export function displayPosts(posts, container) {
@@ -15,6 +16,12 @@ export function displayPosts(posts, container) {
 
     const img = createPostImage(post, "article-card-img");
     articleCard.appendChild(img);
+
+    const postDate = document.createElement("p");
+    articleCard.appendChild(postDate);
+    postDate.classList.add("post-date");
+    // displaying the users local timezone, but only shows date
+    postDate.textContent = displayDynamicDate(post.date_gmt);
 
     const articleCardCopy = document.createElement("div");
     articleCardCopy.classList.add("article-card-copy");
