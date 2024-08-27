@@ -1,4 +1,4 @@
-import { cleanText } from "../components/cleanText.mjs";
+import { cleanText } from "../helper/cleanText.mjs";
 import { createPostImage } from "../components/createPostImage.mjs";
 import { displayDynamicDate } from "../components/displayDynamicDate.mjs";
 

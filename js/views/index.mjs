@@ -2,6 +2,8 @@ import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
 import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";
 import { displayNewsArticle } from "../ui/displayNewsArticle.mjs";
+import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
+import { landingButton, mainContent, toTopButtonWrapper, headerContainer } from "../data/constants.mjs";
 
 // trying to increase loading speeds in terms of Lighthouse statistics
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,12 +19,8 @@ displayCarousel();
 // display news article
 displayNewsArticle();
 
-const landingButton = document.querySelector("#landing-btn");
-const mainContent = document.querySelector("#main-content");
+// scrolling to content section(id) by button
+scrollToSectionByClick(landingButton, mainContent);
 
-landingButton.addEventListener("click", () => {
-  mainContent.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-});
+// scroll to header by "to top button"
+scrollToSectionByClick(toTopButtonWrapper, headerContainer);

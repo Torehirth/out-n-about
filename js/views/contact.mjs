@@ -2,6 +2,8 @@ import { successMessageContainer, exitModalButton } from "../data/constants.mjs"
 import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
 import { submitForm } from "../handler/submitForm.mjs";
 import { exitSuccessModal } from "../handler/exitModal.mjs";
+import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
+import { toTopButtonWrapper, headerContainer } from "../data/constants.mjs";
 
 // toggling mobile nav
 toggleMobileNav();
@@ -25,3 +27,6 @@ window.addEventListener("keydown", (event) => {
     exitSuccessModal();
   }
 });
+
+// scroll to header by "to top button"
+scrollToSectionByClick(toTopButtonWrapper, headerContainer);

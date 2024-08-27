@@ -1,5 +1,5 @@
 import { createPostImage } from "../components/createPostImage.mjs";
-import { cleanText } from "../components/cleanText.mjs";
+import { cleanText } from "../helper/cleanText.mjs";
 
 export function createNewsArticleElements(container, posts) {
   // exit the loading indicator when loaded

@@ -23,7 +23,7 @@
   <body>
     <div class="page-content">
       <div>
-        <header>
+        <header id="header-container">
           <nav class="header-nav">
             <div class="nav-links-left">
               <a href="../contact/index.html" class="nav-link" title="contact me">Contact</a>
@@ -84,6 +84,7 @@
         </div>
       </section>
       <section>
+        <!-- all articles section -->
         <div class="posts-wrapper" id="posts-wrapper">
           <!-- Loader -->
           <div class="lds-ellipsis loader-center">
@@ -92,17 +93,6 @@
             <div></div>
             <div></div>
           </div>
-          <!-- /loader -->
-
-          <!-- <a href="../article/index.html?id=${post.id}">
-            <div class="article-card">
-              <img src="${post._embedded["wp:featuredmedia"][0].link}" alt="" class="article-card-img" />
-              <div class="article-card-copy">
-                <h4>${post.title.rendered}</h4>
-                <p>${cleanText}</p>
-              </div>
-            </div>
-          </a> -->
         </div>
         <div class="load-btn-wrapper">
           <button id="load-btn" type="button" class="card-btn">Load more</button>
@@ -142,8 +132,8 @@
               </div>
             </div>
             <div class="top-btn-container">
-              <div class="top-btn">
-                <a href="#" title="to top"><span class="material-symbols-sharp size-32 arrow-up"> keyboard_arrow_up</span></a>
+              <div class="top-btn" id="top-btn">
+                <button type="button" title="to top"><span class="material-symbols-sharp size-32 arrow-up">keyboard_arrow_up</span></button>
               </div>
               <p>top</p>
             </div>

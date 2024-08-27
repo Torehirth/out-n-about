@@ -4,8 +4,13 @@ export const mobileNav = document.querySelector(".mobile-nav");
 export const navLinks = document.querySelectorAll(".mobile-nav-link");
 export const mobileNavLinks = document.querySelector(".mobile-nav-links");
 export const mobileSoMeLinks = document.querySelectorAll(".mobile-social-media-links");
-// News section
+// Index news section
 export const newsWrapper = document.querySelector("#news-wrapper");
+// Scroll to id's
+export const landingButton = document.querySelector("#landing-btn");
+export const mainContent = document.querySelector("#main-content");
+export const toTopButtonWrapper = document.querySelector("#top-btn");
+export const headerContainer = document.querySelector("#header-container");
 // ---Card carousel---
 export const prevBtn = document.querySelector("#prev-btn");
 export const nextBtn = document.querySelector("#next-btn");

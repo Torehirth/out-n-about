@@ -462,18 +462,17 @@ footer {
   gap: 8px;
 }
 
-.top-btn {
-  cursor: pointer;
-}
-
-.top-btn ~ a {
+.top-btn > button {
   scroll-behavior: smooth;
+  background-color: transparent;
+  border: none;
 }
 
 .arrow-up {
   border: var(--white-border);
   color: var(--white);
   border-radius: var(--border-radius-2);
+  cursor: pointer;
 }
 
 .arrow-up:hover,
