@@ -870,20 +870,25 @@ footer {
 
 /* --- Article cards --- */
 .posts-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 4rem 2rem;
+  justify-items: center;
   max-width: var(--max-width-desktop);
   margin: 0 auto;
-  padding: 5rem 10px 5rem 10px;
+  padding: 5rem 1rem;
 }
 
 .article-card {
   display: flex;
   flex-direction: column;
+  width: 100%;
   max-width: 400px;
   max-height: 420px;
+}
+
+.article-card:last-child {
+  justify-content: left;
 }
 
 .article-card-img {
@@ -917,7 +922,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0 4rem 0;
+  padding: 0rem 0 4rem;
   max-width: var(--max-width-desktop);
   margin: 0 auto;
 }

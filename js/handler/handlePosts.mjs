@@ -9,6 +9,8 @@ let allPosts = []; // empty array to store all posts
 let currentIndex = 0; // index to keep track of the current post
 const postsPerPage = 10; // Number of posts to display per page
 const loadMoreBtn = document.querySelector("#load-btn");
+const loadMoreWrapper = document.querySelector(".load-btn-wrapper");
+
 // clear the loading indicator after the posts are loaded.
 postWrapper.innerHTML = "";
 
@@ -31,6 +33,7 @@ export async function handlePosts(container) {
     // hide the button when theres no more posts
     if (currentIndex >= allPosts.length) {
       loadMoreBtn.classList.add("is-hidden");
+      loadMoreWrapper.classList.add("is-hidden");
     } else {
       // enable button if it is more posts
       loadMoreBtn.disabled = false;
