@@ -517,8 +517,11 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 40vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   padding-inline: 1rem;
 }
 
@@ -526,6 +529,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  height: 100%;
   gap: 3rem;
 }
 
@@ -540,15 +545,15 @@ footer {
   color: var(--white);
   font-weight: 400;
   font-size: var(--h1-size);
+  padding-top: 50vh;
 }
 
 .landing-btn-down-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 20vh;
-  background-color: transparent;
+  align-items: end;
+  width: fit-content;
+  height: 100%;
+  padding: 0 0 1rem 0;
 }
 
 .landing-btn-down-wrapper button {
@@ -653,7 +658,6 @@ footer {
 
 .plain-text-btn.news-btn {
   padding: 0;
-  color: var(--dark-blue);
 }
 
 .card-btn {
@@ -748,12 +752,11 @@ footer {
   justify-content: center;
   align-items: center;
   width: fit-content;
-  color: var(--black);
-  border-radius: var(--border-radius-2);
+  color: var(--dark-blue);
   cursor: pointer;
   font-size: var(--link-size);
-  letter-spacing: 1px;
-  font-weight: 500;
+  letter-spacing: var(--letter-space-05);
+  font-weight: 600;
   text-transform: none;
   padding: 0.5rem;
   line-height: 0;
@@ -761,7 +764,7 @@ footer {
 
 .plain-text-btn:hover,
 .plain-text-btn:active {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .carousel-arrow-right,
