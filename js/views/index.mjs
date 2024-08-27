@@ -16,3 +16,13 @@ displayCarousel();
 
 // display news article
 displayNewsArticle();
+
+const landingButton = document.querySelector("#landing-btn");
+const mainContent = document.querySelector("#main-content");
+
+landingButton.addEventListener("click", () => {
+  mainContent.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});

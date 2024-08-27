@@ -549,6 +549,12 @@ footer {
   align-items: center;
   position: relative;
   top: 20vh;
+  background-color: transparent;
+}
+
+.landing-btn-down-wrapper button {
+  background-color: transparent;
+  border: none;
 }
 
 .landing-arrow-down {
@@ -557,6 +563,7 @@ footer {
   border-radius: 50%;
   color: var(--orange);
   cursor: pointer;
+  background-color: transparent;
 }
 
 .landing-arrow-down:hover,
