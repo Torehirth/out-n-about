@@ -5,21 +5,26 @@ import { postWrapper } from "../data/constants.mjs";
 
 // handle posts function, displaying 10 posts initially then 10 more on each click.
 // The function fetches all posts if the allPosts array is empty, then displays the posts.
-let allPosts = []; // empty array to store all posts
-let currentIndex = 0; // index to keep track of the current post
+ let allPosts = []; // empty array to store all posts
+ let currentIndex = 0; // index to keep track of the current post
 const postsPerPage = 10; // Number of posts to display per page
 const loadMoreBtn = document.querySelector("#load-btn");
-const loadMoreWrapper = document.querySelector(".load-btn-wrapper");
+export const loadMoreWrapper = document.querySelector(".load-btn-wrapper");
 
 // clear the loading indicator after the posts are loaded.
 postWrapper.innerHTML = "";
 
-export async function handlePosts(container) {
+export async function handlePosts(container, categoryId = "31") {
   try {
     loadMoreBtn.disabled = true;
 
+    // Clear container before loading new posts
+    if (currentIndex === 0) {
+      container.innerHTML = ""; // Clear the container if starting over
+    }
+
     if (allPosts.length === 0) {
-      allPosts = await fetchAllPosts(container);
+      allPosts = await fetchAllPosts(container, categoryId);
     }
     // using slice method to set how many posts that are displayed and the next set of posts. It starts from currentIndex and goes up to currentIndex + postPerPage ( 0, 0 + 10 => 10, 10 + 10 .. (in other words: first 0-10 then 10-20 and so on til max posts))
     const postsToDisplay = allPosts.slice(currentIndex, currentIndex + postsPerPage);
@@ -29,10 +34,13 @@ export async function handlePosts(container) {
 
     //  after displaying the posts, the currentIndex is incremented by postsPerPage. this updates the index so the next time posts are loaded, it knows where to start
     currentIndex += postsPerPage;
+    console.log("index 1:", currentIndex);
+    console.log("posts to Display:", postsToDisplay);
+
+    console.log("allposts 1:", allPosts);
 
     // hide the button when theres no more posts
     if (currentIndex >= allPosts.length) {
-      loadMoreBtn.classList.add("is-hidden");
       loadMoreWrapper.classList.add("is-hidden");
     } else {
       // enable button if it is more posts
@@ -46,3 +54,22 @@ export async function handlePosts(container) {
 loadMoreBtn.addEventListener("click", () => {
   handlePosts(postWrapper);
 });
+
+// ID number for the specific categories.
+// ID 12 = climbing
+// ID 28 = fly fishing
+// ID 8 = outdoor adventure
+// ID 13 = skiing
+// ID 6 = travel
+// // ID 30 = france
+// // ID 10 = italy
+// // ID 9 = norway
+// // ID 11 = spain
+// // ID 29 = thailand
+
+export function filterPostsByCategory(categoryId) {
+  // Reset currentIndex and allPosts for new category
+  currentIndex = 0;
+  allPosts = [];
+  handlePosts(postWrapper, categoryId);
+}

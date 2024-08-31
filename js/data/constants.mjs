@@ -18,7 +18,7 @@ export const carousel = document.querySelector("#post-carousel");
 export const cards = document.querySelectorAll("#carousel-cards");
 export const cardImages = document.querySelectorAll(".post-carousel-card img");
 // --- API ---
-export const apiUrl = "https://exam.torehirth.no/wp-json/wp/v2/posts";
+export const baseURL = "https://exam.torehirth.no/wp-json/wp/v2/posts";
 // --- Articles page ---
 export const postWrapper = document.querySelector("#posts-wrapper");
 // --- Contact page ---

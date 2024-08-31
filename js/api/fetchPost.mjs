@@ -1,5 +1,5 @@
 import { getQueryParameter } from "../helper/getQueryParameter.mjs";
-import { apiUrl } from "../data/constants.mjs";
+import { baseURL } from "../data/constants.mjs";
 const id = getQueryParameter("id");
 
 export const fetchPost = async (container) => {
@@ -8,7 +8,7 @@ export const fetchPost = async (container) => {
     document.location.href = "../articles/index.html";
   }
   try {
-    const response = await fetch(`${apiUrl}/${id}?_embed`);
+    const response = await fetch(`${baseURL}/${id}?_embed`);
 
     if (!response.ok) {
       throw new Error("There was an error fetching the post");
