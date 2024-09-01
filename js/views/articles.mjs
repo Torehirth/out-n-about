@@ -22,21 +22,30 @@ import { filterPostsByCategory, loadMoreWrapper } from "../handler/handlePosts.m
 // add clicked look on the category buttons
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll("#category-button");
-  const allPostsButton = document.querySelector(".category-button all-posts-btn");
+  const headline = document.querySelector(".main-heading");
 
-  // call the function without categoryId initially to display all posts.
+  const allPostsButton = document.querySelector(".all-posts-btn.all-posts-btn");
+  allPostsButton.classList.add("active");
+
+  // call the function with categoryId for all posts initially to display all posts and highlight the "All" category button.
   filterPostsByCategory("31");
 
   buttons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
       // Get the category ID from the data attribute
       const categoryId = button.getAttribute("category-id");
+      // change the h1 to display the category name
+      headline.textContent = event.target.textContent;
 
-      // Check if the button already has the class "active"
+      // Check if the category buttons already has the class "active"
       if (button.classList.contains("active")) {
         // If it has, remove the class "active" (styling)
         button.classList.remove("active");
-        // Optionally, you might want to reset to show all posts if no category is active
+        // and add class to "All" category button.
+        allPostsButton.classList.add("active");
+        // change the h1 to display the category name
+        headline.textContent = "All articles";
+        // call the function to reset to show all posts if no category is active
         filterPostsByCategory("31");
         // display the "load more" button when category button is clicked twice(deactivated)
         loadMoreWrapper.classList.remove("is-hidden");
@@ -45,12 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
         buttons.forEach((btn) => btn.classList.remove("active"));
         // Add class "active" to clicked button
         button.classList.add("active");
-
+        // and remove from "All" category button.
+        allPostsButton.classList.remove("active");
         // to get the "All" category button display the "load more" button on the bottom
-        if (categoryId === "") {
+        if (categoryId === "31") {
           loadMoreWrapper.classList.remove("is-hidden");
+          // highlight the "All" button when clicked
+          allPostsButton.classList.add("active");
+          // change the h1 to display the category name
+          headline.textContent = "All articles";
         }
-
         // Call the function to filter posts by the selected category
         filterPostsByCategory(categoryId);
       }

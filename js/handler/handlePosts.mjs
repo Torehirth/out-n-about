@@ -5,8 +5,8 @@ import { postWrapper } from "../data/constants.mjs";
 
 // handle posts function, displaying 10 posts initially then 10 more on each click.
 // The function fetches all posts if the allPosts array is empty, then displays the posts.
- let allPosts = []; // empty array to store all posts
- let currentIndex = 0; // index to keep track of the current post
+let allPosts = []; // empty array to store all posts
+let currentIndex = 0; // index to keep track of the current post
 const postsPerPage = 10; // Number of posts to display per page
 const loadMoreBtn = document.querySelector("#load-btn");
 export const loadMoreWrapper = document.querySelector(".load-btn-wrapper");
@@ -34,10 +34,6 @@ export async function handlePosts(container, categoryId = "31") {
 
     //  after displaying the posts, the currentIndex is incremented by postsPerPage. this updates the index so the next time posts are loaded, it knows where to start
     currentIndex += postsPerPage;
-    console.log("index 1:", currentIndex);
-    console.log("posts to Display:", postsToDisplay);
-
-    console.log("allposts 1:", allPosts);
 
     // hide the button when theres no more posts
     if (currentIndex >= allPosts.length) {
