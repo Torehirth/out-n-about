@@ -13,7 +13,7 @@ export const loadMoreWrapper = document.querySelector(".load-btn-wrapper");
 
 // clear the loading indicator after the posts are loaded.
 postWrapper.innerHTML = "";
-
+// adding the default parameter for "all articles" category to the argument
 export async function handlePosts(container, categoryId = "31") {
   try {
     loadMoreBtn.disabled = true;
@@ -51,7 +51,15 @@ loadMoreBtn.addEventListener("click", () => {
   handlePosts(postWrapper);
 });
 
+// function for filtering posts by category on articles.html
+export function filterPostsByCategory(categoryId) {
+  // Reset currentIndex and allPosts for new category
+  currentIndex = 0;
+  allPosts = [];
+  handlePosts(postWrapper, categoryId);
+}
 // ID number for the specific categories.
+// ID 31 = all articles
 // ID 12 = climbing
 // ID 28 = fly fishing
 // ID 8 = outdoor adventure
@@ -62,10 +70,3 @@ loadMoreBtn.addEventListener("click", () => {
 // // ID 9 = norway
 // // ID 11 = spain
 // // ID 29 = thailand
-
-export function filterPostsByCategory(categoryId) {
-  // Reset currentIndex and allPosts for new category
-  currentIndex = 0;
-  allPosts = [];
-  handlePosts(postWrapper, categoryId);
-}
