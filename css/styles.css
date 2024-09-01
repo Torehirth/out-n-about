@@ -117,7 +117,8 @@ body {
   --white-border: solid 1px var(--white);
   --black-border: solid 1px var(--black);
   --orange-border-2: solid 2px var(--orange);
-  --border-radius-2: 25px;
+  --border-radius: 5px;
+  --border-radius-2: 50px;
   --btn-shadow: 1px 1px 4px var(--black);
   --btn-shadow-2: 2px 2px 10px var(--dark-blue);
   --transition: all 0.3s ease;
@@ -642,7 +643,7 @@ footer {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
 }
 
 .card-copy {
@@ -652,7 +653,6 @@ footer {
   text-align: left;
   gap: 1rem;
   padding-top: 2rem;
-  border-radius: var(--border-radius-2);
   width: 100%;
 }
 
@@ -673,7 +673,7 @@ footer {
   text-transform: none;
   font-weight: 600;
   border: none;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
   cursor: pointer;
   box-shadow: var(--btn-shadow-2);
 }
@@ -707,8 +707,7 @@ footer {
 .post-carousel-card {
   display: flex;
   flex-direction: column;
-  border-radius: var(--border-radius-2);
-  scroll-snap-align: start;
+  /* scroll-snap-align: center; */
   cursor: pointer;
 }
 
@@ -716,7 +715,7 @@ footer {
   height: 200px;
   object-fit: cover;
   width: 300px;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
 }
 
 .post-carousel-card-img:hover,
@@ -773,7 +772,7 @@ footer {
   top: 125%;
   cursor: pointer;
   color: var(--black);
-  padding: 1.5rem 0.75rem;
+  padding: 0.5rem 0.5rem;
   background-color: var(--orange);
   opacity: 0.9;
   border: none;
@@ -798,6 +797,13 @@ footer {
   opacity: 1;
   color: var(--orange);
   background-color: var(--dark-blue);
+}
+
+.carousel-arrow-right,
+.carousel-arrow-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ---- Intro section ---- */
@@ -883,15 +889,19 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 8px 20px;
-  max-height: min-content;
+  max-height: 37px;
   font-size: var(--link-size);
   letter-spacing: var(--letter-space-2);
   color: var(--white);
   border: none;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
   cursor: pointer;
   background-color: var(--dark-blue);
   box-shadow: var(--btn-shadow-2);
+}
+
+.category-button:hover {
+  box-shadow: none;
 }
 
 .drop-down-container {
@@ -909,12 +919,11 @@ footer {
   align-items: center;
   gap: 0.5rem;
   position: absolute;
-  top: 100%;
+  top: 102%;
   left: 0;
   background-color: var(--dark-blue);
   box-shadow: var(--btn-shadow-2);
-  border-radius: var(--border-radius-2);
-  z-index: 1;
+  border-radius: var(--border-radius);
   width: 100%;
   padding: 0.5rem 0.5rem;
 }
@@ -989,7 +998,7 @@ footer {
   max-width: 400px;
   max-height: 300px;
   object-fit: cover;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
 }
 
 .article-card:hover,
@@ -1102,28 +1111,6 @@ footer {
   gap: 4rem;
 }
 
-.reverse-coloured-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: fit-content;
-  padding: 12px 25px;
-  background-color: var(--black);
-  color: var(--orange);
-  font-size: var(--link-size);
-  letter-spacing: 1px;
-  font-weight: 500;
-  border-radius: var(--border-radius-2);
-  box-shadow: var(--btn-shadow-2);
-}
-
-.reverse-coloured-btn:active,
-.reverse-coloured-btn:hover {
-  background-color: var(--orange);
-  color: var(--black);
-  transition: var(--transition);
-}
-
 .about-bottom-padding {
   padding: 0 0 2rem 0;
 }
@@ -1205,7 +1192,7 @@ footer {
   width: 100%;
   padding: 1.25rem 1rem;
   background-color: var(--light-grey);
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
   box-shadow: var(--btn-shadow-2);
   outline: none;
   border: none;
@@ -1230,7 +1217,7 @@ footer {
   padding: 17px 30px;
   background-color: var(--orange);
   border: none;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
   box-shadow: var(--btn-shadow-2);
   color: var(--black);
   font-size: var(--link-size);
@@ -1334,7 +1321,7 @@ footer {
   font-size: var(--link-size);
   letter-spacing: 1px;
   font-weight: 600;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
   cursor: pointer;
   box-shadow: 1px 2px 4px var(--orange);
   max-width: fit-content;

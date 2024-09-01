@@ -53,20 +53,9 @@ loadMoreBtn.addEventListener("click", () => {
 
 // function for filtering posts by category on articles.html
 export function filterPostsByCategory(categoryId) {
-  // Reset currentIndex and allPosts for new category
+  // Reset currentIndex and allPosts for new category to display only chosen category
   currentIndex = 0;
   allPosts = [];
+
   handlePosts(postWrapper, categoryId);
 }
-// ID number for the specific categories.
-// ID 31 = all articles
-// ID 12 = climbing
-// ID 28 = fly fishing
-// ID 8 = outdoor adventure
-// ID 13 = skiing
-// ID 6 = travel
-// // ID 30 = france
-// // ID 10 = italy
-// // ID 9 = norway
-// // ID 11 = spain
-// // ID 29 = thailand

@@ -36,7 +36,8 @@ export const handleCategoryButtons = () => {
         button.classList.add("active");
         // and remove from "All" category button.
         allPostsButton.classList.remove("active");
-        // to get the "All" category button display the "load more" button on the bottom
+
+        // if categoryId is "All", display the "load more" button
         if (categoryId === "31") {
           loadMoreWrapper.classList.remove("is-hidden");
           // highlight the "All" button when clicked
@@ -44,9 +45,27 @@ export const handleCategoryButtons = () => {
           // change the h1 to display the category name
           headline.textContent = "All articles";
         }
+
+        // if categoryId is "travel" display "load more" button
+        if (categoryId === "6") {
+          loadMoreWrapper.classList.remove("is-hidden");
+        }
         // Call the function to filter posts by the selected category
         filterPostsByCategory(categoryId);
       }
     });
   });
 };
+
+// ID number for the specific categories.
+// ID 31 = all articles
+// ID 12 = climbing
+// ID 28 = fly fishing
+// ID 8 = outdoor adventure
+// ID 13 = skiing
+// ID 6 = travel
+// // ID 30 = france
+// // ID 10 = italy
+// // ID 9 = norway
+// // ID 11 = spain
+// // ID 29 = thailand
