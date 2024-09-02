@@ -18,7 +18,6 @@ export const displaySinglePost = async (container) => {
 
     // updating the URL pathname with the article title
     updateUrlWithTitle(getQueryParameter("id"), postTitle, postContainer);
-    console.log(post);
 
     // calls the render post function
     renderPost(post, postContainer);
