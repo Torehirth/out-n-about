@@ -7,8 +7,9 @@ import { carousel } from "../data/constants.mjs";
 export const handleCarouselFunctionality = async () => {
   // Fetch posts to load them before carousel data will be gathered
   const posts = await fetchAllPosts();
-  // create carousel elements and append posts to carousel container
+  // number of posts to display in carousel
   const numberOfPosts = 7;
+  // create carousel elements and append posts to carousel container
   displayCarouselCardsByDate(carousel, posts, numberOfPosts);
 
   // now that the posts are loaded i can use the cards variable and get truthy values

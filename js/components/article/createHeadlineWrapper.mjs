@@ -1,5 +1,5 @@
 export const createHeadlineWrapper = (container, post) => {
-  // deletes
+  
   container.textContent = "";
   const headlineWrapper = document.createElement("div");
   container.appendChild(headlineWrapper);
@@ -16,12 +16,4 @@ export const createHeadlineWrapper = (container, post) => {
   headlineWrapper.appendChild(headingParagraph);
   headingParagraph.textContent = post.excerpt.rendered.replace(new RegExp("<[^>]+>", "g"), "").replace(new RegExp("&#8217;", "g"), "'");
 };
-
-
-
-
-// -------------------------------
-
-
-// -------------------------------
 

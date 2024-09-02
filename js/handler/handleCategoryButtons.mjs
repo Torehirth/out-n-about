@@ -1,4 +1,5 @@
 import { filterPostsByCategory, loadMoreWrapper } from "../handler/handlePosts.mjs";
+import { allPosts } from "../handler/handlePosts.mjs";
 
 // highlight the category buttons and update headline to category name
 export const handleCategoryButtons = () => {
@@ -14,8 +15,13 @@ export const handleCategoryButtons = () => {
     button.addEventListener("click", (event) => {
       // Get the category ID from the data attribute
       const categoryId = button.getAttribute("category-id");
+
       // change the h1 to display the category name
-      headline.textContent = event.target.textContent;
+      // using parentElement to get the button target when clicking the span (or other elements)
+      if (event.target.type === "button" || event.target.parentElement.type === "button") {
+        // using firstChild.nodeValue to get only the button element text, excluding the span element
+        headline.textContent = event.target.closest("button").firstChild.nodeValue.trim();
+      }
 
       // Check if the category buttons already has the class "active"
       if (button.classList.contains("active")) {
@@ -37,19 +43,18 @@ export const handleCategoryButtons = () => {
         // and remove from "All" category button.
         allPostsButton.classList.remove("active");
 
-        // if categoryId is "All", display the "load more" button
         if (categoryId === "31") {
-          loadMoreWrapper.classList.remove("is-hidden");
           // highlight the "All" button when clicked
           allPostsButton.classList.add("active");
           // change the h1 to display the category name
           headline.textContent = "All articles";
         }
 
-        // if categoryId is "travel" display "load more" button
-        if (categoryId === "6") {
+        // display the "load more" button if category has more than 10 posts
+        if (allPosts.length >= 10) {
           loadMoreWrapper.classList.remove("is-hidden");
         }
+
         // Call the function to filter posts by the selected category
         filterPostsByCategory(categoryId);
       }

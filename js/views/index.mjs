@@ -8,19 +8,19 @@ import { landingButton, mainContent, toTopButtonWrapper, headerContainer } from 
 // trying to increase loading speeds in terms of Lighthouse statistics
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllPosts();
+
+  // toggle mobile nav
+  toggleMobileNav();
+
+  // display carouse
+  displayCarousel();
+
+  // display news article
+  displayNewsArticle();
+
+  // scrolling to content section(id) by button
+  scrollToSectionByClick(landingButton, mainContent);
+
+  // scroll to header by "to top button"
+  scrollToSectionByClick(toTopButtonWrapper, headerContainer);
 });
-
-// toggle mobile nav
-toggleMobileNav();
-
-// display carouse
-displayCarousel();
-
-// display news article
-displayNewsArticle();
-
-// scrolling to content section(id) by button
-scrollToSectionByClick(landingButton, mainContent);
-
-// scroll to header by "to top button"
-scrollToSectionByClick(toTopButtonWrapper, headerContainer);

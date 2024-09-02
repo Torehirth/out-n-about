@@ -29,14 +29,14 @@ export const createSubTextContainer = (container, postContent) => {
   });
 };
 
-// creates a wrapper for each section with h3 element and paragraphs.
+// creates a wrapper for each section with sub-headline and paragraphs.
 // gets called inside createSubTextContainer function.
 export const createSubTextWrapper = (container, heading, paragraphs) => {
   const subTextWrapper = document.createElement("div");
   container.appendChild(subTextWrapper);
   subTextWrapper.classList.add("sub-text-wrapper");
 
-  // adds one "h3" heading to each wrapper,
+  // adds one sub-headline to each wrapper,
   createSubHeadings(subTextWrapper, heading);
   // adds all the associated "p" elements to the wrapper
   paragraphs.forEach((paragraph) => {
@@ -44,11 +44,11 @@ export const createSubTextWrapper = (container, heading, paragraphs) => {
   });
 };
 
-// creates a h3 element
+// creates a h2 element
 // gets called inside createSubTextWrapper function.
 export const createSubHeadings = (container, heading) => {
-  // creates and append h3 elements
-  const subHeading = document.createElement("h3");
+  // creates and append sub-headlines
+  const subHeading = document.createElement("h2");
   container.appendChild(subHeading);
   subHeading.classList.remove("wp-block-heading");
 
