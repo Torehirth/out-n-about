@@ -879,7 +879,7 @@ footer {
 }
 
 .category-button:hover {
-  box-shadow: none;
+  opacity: 0.9;
 }
 
 .drop-down-container {
@@ -897,18 +897,18 @@ footer {
   align-items: center;
   gap: 0.5rem;
   position: absolute;
-  top: 102%;
-  left: 0;
+  top: 86%;
   background-color: var(--dark-blue);
-  box-shadow: var(--btn-shadow-2);
+  box-shadow: var(--btn-shadow);
   border-radius: var(--border-radius);
   width: 100%;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1rem;
+  max-width: fit-content;
 }
 
-.drop-down-container:hover .drop-down-wrapper {
+/* .drop-down-container:hover .drop-down-wrapper {
   display: flex;
-}
+} */
 
 .drop-down-btn {
   display: block;
@@ -918,7 +918,7 @@ footer {
   letter-spacing: var(--letter-space-2);
   color: var(--white);
   border: none;
-  border-radius: var(--border-radius-2);
+  border-radius: var(--border-radius);
   cursor: pointer;
   background-color: var(--dark-blue);
   box-shadow: var(--btn-shadow-2);
@@ -947,6 +947,10 @@ footer {
   transform: translateY(1px);
   background-color: var(--orange);
   color: var(--black);
+}
+
+.drop-down-wrapper.open {
+  display: flex;
 }
 
 /* -------  Article cards  --------- */
