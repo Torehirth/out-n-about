@@ -23,7 +23,7 @@
   <body class="body-index">
     <div class="hero">
       <div>
-        <header>
+        <header id="header-container">
           <nav class="header-nav">
             <div class="nav-links-left">
               <a href="./contact/index.html" class="nav-link" title="contact me">Contact</a>
@@ -72,14 +72,22 @@
             </div>
           </aside>
         </header>
+        <!-- landing section -->
         <article class="landing-container">
           <div class="index-top-heading-container">
             <h2 class="index-sub-heading">Explore Nature's Playground with me</h2>
             <h1 class="index-main-heading">Your inspiration to Outdoor adventures</h1>
+            <div class="landing-btn-down-wrapper">
+              <button id="landing-btn" type="button">
+                <span class="material-symbols-sharp landing-arrow-down size-32 weight-400">keyboard_arrow_down</span>
+              </button>
+            </div>
           </div>
-          <div class="landing-btn-down-wrapper">
-            <a href="#main-content"><span class="material-symbols-sharp landing-arrow-down size-32 weight-400">keyboard_arrow_down</span></a>
-          </div>
+          <!-- <div class="landing-btn-down-wrapper">
+            <button id="landing-btn" type="button">
+              <span class="material-symbols-sharp landing-arrow-down size-32 weight-400">keyboard_arrow_down</span>
+            </button>
+          </div> -->
         </article>
       </div>
     </div>
@@ -187,8 +195,8 @@
               </div>
             </div>
             <div class="top-btn-container">
-              <div class="top-btn">
-                <a href="#" title="to top"><span class="material-symbols-sharp size-32 arrow-up"> keyboard_arrow_up</span></a>
+              <div class="top-btn" id="top-btn">
+                <button type="button" title="to top"><span class="material-symbols-sharp size-32 arrow-up">keyboard_arrow_up</span></button>
               </div>
               <p>top</p>
             </div>

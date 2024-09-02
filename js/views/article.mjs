@@ -4,6 +4,8 @@ import { createImageModalElements } from "../components/createImageModalElements
 import { displayImagePopup, closeImagePopup } from "../handler/handleImageModal.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";
 import { postContainer } from "../data/constants.mjs";
+import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
+import { toTopButtonWrapper, headerContainer } from "../data/constants.mjs";
 
 // trying to increase loading speeds in terms of Lighthouse statistics
 import { fetchPost } from "../api/fetchPost.mjs";
@@ -49,3 +51,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error loading modal elements:", error);
   }
 });
+
+// scroll to header by "to top button"
+scrollToSectionByClick(toTopButtonWrapper, headerContainer);

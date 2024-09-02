@@ -1,4 +1,4 @@
-import { cleanText } from "./cleanText.mjs";
+import { cleanText } from "../helper/cleanText.mjs";
 
 // create post image for cards
 export const createPostImage = (post, className, imageSize) => {

@@ -1,14 +1,16 @@
 import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
-import { handlePosts } from "../handler/handlePosts.mjs";
-import { postWrapper } from "../data/constants.mjs";
-
-// trying to increase loading speeds in terms of Lighthouse statistics
+import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
+import { toTopButtonWrapper, headerContainer } from "../data/constants.mjs";
+import { handleCategoryButtons } from "../handler/handleCategoryButtons.mjs";
 import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
-document.addEventListener("DOMContentLoaded", () => {
-  fetchAllPosts();
-});
 
-// toggling mobile nav
-toggleMobileNav();
-// fetching and displaying posts
-handlePosts(postWrapper);
+document.addEventListener("DOMContentLoaded", () => {
+  // trying to increase loading speeds in terms of Lighthouse statistics
+  fetchAllPosts();
+  // toggling mobile nav
+  toggleMobileNav();
+  // scroll to header by "to top button"
+  scrollToSectionByClick(toTopButtonWrapper, headerContainer);
+  // function to display all posts by category and change category by buttons
+  handleCategoryButtons();
+});

@@ -1,17 +1,5 @@
 import { hamburgerMenu, mobileNav, navLinks, mobileNavLinks, mobileSoMeLinks } from "../data/constants.mjs";
 
-// export function toggleMobileNav() {
-//   hamburgerMenu.addEventListener("click", function () {
-//     // toggles the hamburger menu and mobile nav.
-//     hamburgerMenu.classList.toggle("is-active");
-//     mobileNav.classList.toggle("is-active");
-//     // make the X white when mobile nav is displayed.
-//     if (mobileNav.classList.contains("is-active")) {
-//       hamburgerMenu.classList.add = "is-active";
-//     }
-//   });
-// }
-
 export function toggleMobileNav() {
   function closeMobileNav() {
     hamburgerMenu.classList.remove("is-active");
@@ -25,7 +13,7 @@ export function toggleMobileNav() {
   }
 
   hamburgerMenu.addEventListener("click", function (event) {
-    // prevent the click event from propagating to the document
+    // prevent the click event from propagating to the document, and prevents the nav from closing immediately after opened.
     event.stopPropagation();
     // toggles the hamburger menu and mobile nav.
     hamburgerMenu.classList.toggle("is-active");
