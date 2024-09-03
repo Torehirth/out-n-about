@@ -5,7 +5,7 @@ const dropDownIcon = document.querySelector(".drop-down-btn span");
 export const toggleCategoryDropDownButton = () => {
   dropDownContainer.addEventListener("click", (e) => {
     // to stop event bubbling up or interfere with other elements
-    // e.stopPropagation();
+    e.stopPropagation();
     console.log(e.target);
 
     if (!dropDownWrapper.classList.contains("open")) {
