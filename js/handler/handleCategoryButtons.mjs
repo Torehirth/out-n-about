@@ -3,7 +3,7 @@ import { allPosts } from "../handler/handlePosts.mjs";
 
 // highlight the category buttons and update headline to category name
 export const handleCategoryButtons = () => {
-  const buttons = document.querySelectorAll("#category-button");
+  const buttons = document.querySelectorAll(".category-button");
   const headline = document.querySelector(".main-heading");
   const allPostsButton = document.querySelector(".all-posts-btn.all-posts-btn");
   // call the function with categoryId for all posts initially to display all posts and highlight the "All" category button.
@@ -14,7 +14,7 @@ export const handleCategoryButtons = () => {
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       // Get the category ID from the data attribute
-      const categoryId = button.getAttribute("category-id");
+      const categoryId = button.getAttribute("data-category-id");
 
       // change the h1 to display the category name
       // using parentElement to get the button target when clicking the span (or other elements)
