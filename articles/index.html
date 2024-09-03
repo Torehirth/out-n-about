@@ -60,9 +60,9 @@
               <a href="../articles/index.html" class="nav-link articles current-page" title="articles">Articles</a>
               <a href="/" class="nav-link home" title="home">Home</a>
               <a href="" class="nav-link zero-padding search-icon" title="search"><span class="material-symbols-sharp size-32">search</span></a>
-              <button class="hamburger" title="hamburger menu" type="menu" hidden>
+              <div class="hamburger" title="hamburger menu" hidden>
                 <div class="hamburger-bar"></div>
-              </button>
+              </div>
             </div>
           </nav>
           <aside class="mobile-nav">
@@ -99,30 +99,30 @@
           </div>
         </div>
       </section>
-      <section>
+      <div>
         <!-- category buttons -->
         <div class="category-btn-wrapper">
           <div>
-            <button id="category-button" category-id="31" type="button" class="category-button all-posts-btn">All</button>
+            <button data-category-id="31" type="button" class="category-button all-posts-btn">All</button>
           </div>
           <div>
-            <button id="category-button" category-id="12" type="button" class="category-button">Climbing</button>
+            <button data-category-id="12" type="button" class="category-button">Climbing</button>
           </div>
           <div>
-            <button id="category-button" category-id="8" type="button" class="category-button">Outdoor Adventure</button>
+            <button data-category-id="8" type="button" class="category-button">Outdoor Adventure</button>
           </div>
-          <div><button id="category-button" category-id="13" type="button" class="category-button">Skiing</button></div>
-          <div><button id="category-button" category-id="28" type="button" class="category-button">Fly Fishing</button></div>
+          <div><button data-category-id="13" type="button" class="category-button">Skiing</button></div>
+          <div><button data-category-id="28" type="button" class="category-button">Fly Fishing</button></div>
           <div>
             <div class="drop-down-container">
-              <button id="" category-id="6" type="button" class="category-button drop-btn">
+              <button data-category-id="6" type="button" class="drop-down-btn">
                 Travel<span class="material-symbols-sharp">keyboard_arrow_down</span>
               </button>
               <div class="drop-down-wrapper">
-                <button id="category-button" category-id="9" class="drop-down-btn" type="button">Norway</button>
-                <button id="category-button" category-id="30" class="drop-down-btn" type="button">France</button>
-                <button id="category-button" category-id="10" class="drop-down-btn" type="button">Italy</button>
-                <button id="category-button" category-id="29" class="drop-down-btn" type="button">Thailand</button>
+                <button data-category-id="9" class="category-button drop-down-cat-buttons" type="button">Norway</button>
+                <button data-category-id="30" class="category-button drop-down-cat-buttons" type="button">France</button>
+                <button data-category-id="10" class="category-button drop-down-cat-buttons" type="button">Italy</button>
+                <button data-category-id="29" class="category-button drop-down-cat-buttons" type="button">Thailand</button>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@
         <div class="load-btn-wrapper">
           <button id="load-btn" type="button" class="card-btn">Load more</button>
         </div>
-      </section>
+      </div>
     </main>
     <footer>
       <div class="footer">
