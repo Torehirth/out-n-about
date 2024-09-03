@@ -532,7 +532,7 @@ footer {
   align-items: end;
   width: fit-content;
   height: 100%;
-  padding: 0 0 1rem 0;
+  padding: 0 0 2rem 0;
 }
 
 .landing-btn-down-wrapper button {
@@ -1690,15 +1690,12 @@ footer {
   }
 
   .index-sub-heading {
+    font-size: 1.5rem;
     padding-top: 45vh;
   }
 
   .index-main-heading {
     font-size: 1.75rem;
-  }
-
-  .index-sub-heading {
-    font-size: 1.5rem;
   }
 
   .landing-arrow-down {
@@ -1707,7 +1704,7 @@ footer {
 
   /* ---intro--- */
   .intro-container {
-    padding: 4rem 0.5rem;
+    padding: 3rem 0.5rem;
   }
 
   .card-btn,
@@ -1917,6 +1914,13 @@ footer {
     flex-direction: column;
   }
 
+  /* index page */
+  .index-sub-heading {
+    font-size: 1.5rem;
+    padding-top: 35vh;
+  }
+
+  /* contact page */
   .success-text-wrapper h1 {
     font-size: 1.25rem;
   }
