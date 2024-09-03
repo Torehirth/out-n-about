@@ -1447,7 +1447,9 @@ footer {
 
 .modal-image {
   display: block;
-  height: 90vh;
+  /* height: 90vh; */
+  max-width: 90vw;
+  max-height: 70vh;
   object-fit: cover;
   z-index: 1000;
   background-color: var(--black);
@@ -1890,11 +1892,6 @@ footer {
 
   .blog-post-btn-container {
     margin: 2rem auto;
-  }
-
-  .modal-image {
-    max-width: 90vw;
-    max-height: 60vh;
   }
 }
 
