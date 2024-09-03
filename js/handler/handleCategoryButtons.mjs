@@ -48,6 +48,8 @@ export const handleCategoryButtons = () => {
           allPostsButton.classList.add("active");
           // change the h1 to display the category name
           headline.textContent = "All articles";
+          // display "load more" button when "all" category is clicked
+          loadMoreWrapper.classList.remove("is-hidden");
         }
 
         // display the "load more" button if category has more than 10 posts

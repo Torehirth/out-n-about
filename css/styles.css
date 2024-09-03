@@ -1393,8 +1393,7 @@ footer {
   gap: 1rem;
 }
 
-.sub-text-wrapper h3 {
-  font-size: 1.75rem;
+.sub-text-wrapper h2 {
   padding: 0 0 8px 0;
   line-height: 2rem;
   text-transform: none;
