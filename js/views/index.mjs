@@ -27,9 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   closeSearchBarByClick();
   // close search bar by keyboard "key"
   closeSearchBarByKey("Escape");
+  // calling the function to display them below the search bar on each page.
+  filterPostsBySearch(searchPostsWrapper);
+  // prevent submission from "Enter" key
+  preventSubmissionOnKeyPress(searchInput, "Enter");
 });
-
-// calling the function to display them below the search bar on each page.
-filterPostsBySearch(searchPostsWrapper);
-// prevent submission from "Enter" key
-preventSubmissionOnKeyPress(searchInput, "Enter");

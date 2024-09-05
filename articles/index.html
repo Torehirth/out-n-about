@@ -92,10 +92,12 @@
           </aside>
           <!-- search bar -->
           <div>
-            <form id="search-form" action="/search" method="GET" class="search-form hidden">
+            <form id="search-form" action="/search" method="GET" class="search-form is-hidden">
               <input required type="text" id="search-input" class="search-input" name="search" placeholder="Search blog posts..." />
-              <button id="search-submit-btn" class="search-button" type="submit"><span class="material-symbols-sharp size-32">search</span></button>
             </form>
+            <div class="search-content-container is-hidden">
+              <div class="search-content"></div>
+            </div>
           </div>
         </header>
       </div>
