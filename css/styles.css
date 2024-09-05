@@ -982,6 +982,7 @@ footer {
   font-weight: 400;
   font-size: var(--h1-size);
   text-transform: none;
+  padding: 0 5px;
 }
 
 /* --- Articles Section --- */
