@@ -35,6 +35,10 @@ export async function handlePosts(container, categoryId = "31") {
     //  after displaying the posts, the currentIndex is incremented by postsPerPage. this updates the index so the next time posts are loaded, it knows where to start
     currentIndex += postsPerPage;
 
+    console.log("posts: ", allPosts);
+
+    console.log("index: ", currentIndex);
+
     // hide the button when theres no more posts
     if (currentIndex >= allPosts.length) {
       loadMoreWrapper.classList.add("is-hidden");

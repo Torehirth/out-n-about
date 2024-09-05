@@ -3,6 +3,7 @@ import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
 import { displayPosts } from "../ui/displayPosts.mjs";
 import { searchContentContainer, searchInput } from "../data/constants.mjs";
 import { message } from "../components/message.mjs";
+const mainContainer = document.querySelector("main");
 
 export const filterPostsBySearch = async (container) => {
   try {
@@ -19,6 +20,7 @@ export const filterPostsBySearch = async (container) => {
       if (searchValue.length) {
         // if the search value has a "length" show the content container, hide it if not
         searchContentContainer.classList.remove("is-hidden");
+        mainContainer.style.filter = "opacity(0.2)";
       } else {
         searchContentContainer.classList.add("is-hidden");
       }

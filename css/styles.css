@@ -1150,6 +1150,11 @@ footer {
   margin: 0 auto;
 }
 
+/* need to set this specific on the button wrapper to hide it */
+.load-btn-wrapper.is-hidden {
+  display: none;
+}
+
 /* ------- About me ------- */
 .about-top-img {
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url(../assets/img/derek-sears-lzeMiXS3UJI-unsplash.webp);
