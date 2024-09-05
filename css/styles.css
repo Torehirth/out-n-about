@@ -366,12 +366,17 @@ button {
 }
 
 /* -- search bar -- */
+.outer-search-container {
+  max-width: var(--max-width-desktop);
+  margin: 0 auto;
+}
+
 .search-form {
   position: relative;
   width: 100%;
-  max-width: var(--max-width-desktop);
-  margin: 0 auto;
-  padding: 1rem 0;
+  /* max-width: var(--max-width-desktop); */
+  /* margin: 0 auto; */
+  padding: 1rem 1rem;
   z-index: 1000;
   transform: translateY(-50%);
   transition: var(--transition);
@@ -387,11 +392,11 @@ button {
 /* Styling for the search input and button */
 .search-input {
   width: 100%;
-  max-width: var(--max-width-desktop);
+  /* max-width: var(--max-width-desktop); */
   padding: 1.5rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-size: var(--link-size);
-  border: var(--white-border);
+  border: var(--orange-border-2);
   border-radius: var(--border-radius);
   background: transparent;
   z-index: 1000;
@@ -399,7 +404,6 @@ button {
 }
 .search-input:focus {
   outline: none;
-  border: var(--orange-border-2);
 }
 
 .search-input::placeholder {
@@ -443,15 +447,13 @@ button {
 }
 
 .search-content-container {
-  position: relative;
+  position: absolute;
   width: 100%;
   gap: 1rem;
   padding: 1rem;
   max-width: var(--max-width-desktop);
   margin: 0 auto;
-  background: var(--light-grey);
-  box-shadow: var(--btn-shadow-2);
-  border-radius: var(--border-radius);
+  background: transparent;
   z-index: 1000;
 }
 
@@ -461,9 +463,11 @@ button {
   grid-gap: 4rem 2rem;
   justify-items: center;
   width: 100%;
-  max-width: var(--max-width-desktop);
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 4rem 0;
+  background-color: var(--light-grey);
+  box-shadow: var(--btn-shadow-2);
+  border-radius: var(--border-radius);
+  text-align: left;
 }
 
 /* ----------- Footer ----------- */
@@ -1633,6 +1637,12 @@ footer {
   .nav-link::before,
   .nav-link:active {
     border-top: none;
+  }
+
+  .search-content {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 2rem 1rem;
+    padding: 2rem 0;
   }
 
   /* --- hamburger menu --- */
