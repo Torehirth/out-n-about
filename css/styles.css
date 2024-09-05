@@ -1656,8 +1656,6 @@ footer {
     position: relative;
     width: 1.625rem;
     cursor: pointer;
-    background: none;
-    appearance: none;
     outline: none;
     border: none;
   }

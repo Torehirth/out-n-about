@@ -15,6 +15,8 @@ export function toggleMobileNav() {
   hamburgerMenu.addEventListener("click", function (event) {
     // prevent the click event from propagating to the document, and prevents the nav from closing immediately after opened.
     event.stopPropagation();
+    // console.log(event.target);
+    
     // toggles the hamburger menu and mobile nav.
     hamburgerMenu.classList.toggle("is-active");
     mobileNav.classList.toggle("is-active");
