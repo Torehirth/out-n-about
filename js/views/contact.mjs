@@ -1,32 +1,23 @@
-import { successMessageContainer, exitModalButton } from "../data/constants.mjs";
 import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
 import { submitForm } from "../handler/submitForm.mjs";
-import { exitSuccessModal } from "../handler/exitModal.mjs";
 import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
 import { toTopButtonWrapper, headerContainer } from "../data/constants.mjs";
+import { closeFormModalByButton, closeFormModalByClickOutside, closeFormModalByKey } from "../handler/closeFormModalEventListeners.mjs";
+import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from "../handler/searchBarEventListeners.mjs";
 
 // toggling mobile nav
 toggleMobileNav();
-
 // Calling the submitForm function
 submitForm();
-
-// Close modal by clicking outside the modal
-window.addEventListener("click", (event) => {
-  if (!successMessageContainer.contains(event.target)) {
-    exitSuccessModal();
-  }
-});
-
-// Close modal by clicking the X button
-exitModalButton.addEventListener("click", exitSuccessModal);
-
-// Close modal by pressing the Escape or Enter key
-window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" || event.key === "Enter") {
-    exitSuccessModal();
-  }
-});
-
 // scroll to header by "to top button"
 scrollToSectionByClick(toTopButtonWrapper, headerContainer);
+// toggle search bar open/closed
+toggleNavSearchIcon();
+// close search bar by click outside
+closeSearchBarByClick();
+// close search bar by keyboard "key"
+closeSearchBarByKey("Escape");
+// close form modal functions
+closeFormModalByClickOutside();
+closeFormModalByButton();
+closeFormModalByKey();

@@ -166,7 +166,8 @@ button {
 /* ---- Message ---- */
 .success,
 .warning,
-.error {
+.error,
+.info {
   text-transform: capitalize;
   font-family: var(--heading-font);
   font-weight: 600;
@@ -272,6 +273,11 @@ button {
 
 /* ---------------------DESKTOP--------------------- */
 
+/* display none class*/
+.is-hidden {
+  display: none;
+}
+
 /* --- display none --- */
 .hamburger,
 .mobile-nav {
@@ -360,50 +366,16 @@ button {
 }
 
 /* -- search bar -- */
-
-/* create transition for search bar */
-.search-bar-container {
-  /* overflow: hidden; */
-}
-
-.search-bar-container:not(.hidden) {
-  /* height: 0; */
-}
-
-/* <div id="search-bar-container" class="search-bar-container ">
-
-</div> */
-
-/* Search bar container styling */
-/* .search-bar-container {
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  background-color: transparent;
-  max-width: var(--max-width-desktop);
-  margin: 0 auto;
-  z-index: 1000;
-  position: relative;
-  transition: top var(--transition);
-  max-height: 0;
-  top: 0;
-} */
-
 .search-form {
   position: relative;
   width: 100%;
   max-width: var(--max-width-desktop);
   margin: 0 auto;
-  padding: 1rem 1rem;
+  padding: 1rem 0;
   z-index: 1000;
   transform: translateY(-50%);
   transition: var(--transition);
   opacity: 0;
-}
-
-/* Hide search bar by default */
-.hidden {
-  display: none;
 }
 
 /* to get transition effect */
@@ -420,7 +392,6 @@ button {
   margin: 0 auto;
   font-size: var(--link-size);
   border: var(--white-border);
-  box-shadow: var(--btn-shadow-2);
   border-radius: var(--border-radius);
   background: transparent;
   z-index: 1000;
@@ -429,7 +400,6 @@ button {
 .search-input:focus {
   outline: none;
   border: var(--orange-border-2);
-  box-shadow: var(--btn-shadow-2);
 }
 
 .search-input::placeholder {
@@ -459,7 +429,6 @@ button {
 }
 
 .search-input:focus + .search-button {
-  border: var(--orange-border-2);
   color: var(--white);
 }
 
@@ -471,6 +440,30 @@ button {
   color: var(--black);
   background: var(--orange);
   transition: var(--transition);
+}
+
+.search-content-container {
+  position: relative;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: var(--max-width-desktop);
+  margin: 0 auto;
+  background: var(--light-grey);
+  box-shadow: var(--btn-shadow-2);
+  border-radius: var(--border-radius);
+  z-index: 1000;
+}
+
+.search-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 4rem 2rem;
+  justify-items: center;
+  width: 100%;
+  max-width: var(--max-width-desktop);
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 /* ----------- Footer ----------- */
@@ -1369,15 +1362,6 @@ footer {
 }
 
 /* ---- form success --- */
-.form-success-section {
-  display: block;
-}
-
-/* display none class*/
-.is-hidden {
-  display: none;
-}
-
 .form-success-container {
   position: absolute;
   width: 600px;

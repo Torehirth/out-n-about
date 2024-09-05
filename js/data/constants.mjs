@@ -36,3 +36,9 @@ export const body = document.querySelector("#body");
 export const exitModalButton = document.querySelector(".modal-exit-btn");
 // --- Specific blog post page ---
 export const postContainer = document.querySelector("#blog-post-container");
+// --- Search bar ----
+export const searchForm = document.querySelector("#search-form");
+export const searchInput = document.querySelector("#search-input");
+export const navSearchButton = document.querySelector("#nav-search-btn");
+export const searchContentContainer = document.querySelector(".search-content-container");
+export const searchPostsWrapper = document.querySelector(".search-content");

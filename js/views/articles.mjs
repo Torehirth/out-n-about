@@ -4,9 +4,10 @@ import { toTopButtonWrapper, headerContainer } from "../data/constants.mjs";
 import { handleCategoryButtons } from "../handler/handleCategoryButtons.mjs";
 import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
 import { toggleCategoryDropDownButton } from "../handler/toggleCategoryDropDownButton.mjs";
+import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from "../handler/searchBarEventListeners.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // trying to increase loading speeds in terms of Lighthouse statistics
+  // fetching all posts first to try increasing Lighthouse statistics
   fetchAllPosts();
   // toggling mobile nav
   toggleMobileNav();
@@ -16,4 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   handleCategoryButtons();
   // toggle the category drop down button
   toggleCategoryDropDownButton();
+  // toggle search bar open/closed
+  toggleNavSearchIcon();
+  // close search bar by click outside
+  closeSearchBarByClick();
+  // close search bar by keyboard "key"
+  closeSearchBarByKey("Escape");
 });
