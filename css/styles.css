@@ -1894,9 +1894,18 @@ footer {
     max-width: 250px;
   }
 
+  .post-date {
+    padding: 5px 0.5rem;
+  }
+
   .article-card-img {
     max-width: 250px;
     max-height: 200px;
+  }
+
+  .article-card-copy {
+    gap: 0.5rem;
+    padding: 0 5px;
   }
 
   /* --- about page --- */
