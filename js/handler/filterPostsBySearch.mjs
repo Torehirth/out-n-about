@@ -20,9 +20,12 @@ export const filterPostsBySearch = async (container) => {
       if (searchValue.length) {
         // if the search value has a "length" show the content container, hide it if not
         searchContentContainer.classList.remove("is-hidden");
-        mainContainer.style.filter = "opacity(0.2)";
+        // lowers the opacity on "main" HTML element when search content is showing
+        mainContainer.style.opacity = "0.2";
       } else {
         searchContentContainer.classList.add("is-hidden");
+        // resets the opacity when no content is showing
+        mainContainer.style.opacity = "1";
       }
 
       if (filteredPosts.length) {
