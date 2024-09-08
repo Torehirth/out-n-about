@@ -1,5 +1,5 @@
 # Out 'n About - A website for outdoor adventure stories
-> This is my project exam for the front-end development study.
+This is my project exam for the front-end development study.
 
 ---
 
