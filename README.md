@@ -5,7 +5,7 @@
 **To the website:** [Out 'n About](https://tmh-outnabout.netlify.app)
 
 
-**Preview:**
+**Preview of the landing page:**
 <p align="left"><img height="350px" src="https://github.com/user-attachments/assets/0b83b4a2-3beb-4030-90ea-fe12d550bc2c" alt="gif of landing page" /></p>
 
 ### Requirements:
