@@ -2,7 +2,7 @@
 ### A website for outdoor adventure stories.
 School Project exam in front-end development.
 
-**To the website: [Out 'n About](https://tmh-outnabout.netlify.app)
+** To the website: [Out 'n About](https://tmh-outnabout.netlify.app) **
 
 ### Preview:
 <p align="left"><img height="350px" src="https://github.com/user-attachments/assets/0b83b4a2-3beb-4030-90ea-fe12d550bc2c" alt="gif of website" /></p>
