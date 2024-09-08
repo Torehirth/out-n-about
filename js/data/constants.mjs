@@ -43,4 +43,4 @@ export const navSearchButton = document.querySelector("#nav-search-btn");
 export const searchContentContainer = document.querySelector(".search-content-container");
 export const searchPostsWrapper = document.querySelector(".search-content");
 export const hamburgerMenuButton = document.querySelector(".hamburger");
-
+export const mainContainer = document.querySelector("main");

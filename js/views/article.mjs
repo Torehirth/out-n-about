@@ -1,4 +1,4 @@
-import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
+import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { displaySinglePost } from "../ui/displaySinglePost.mjs";
 import { createImageModalElements } from "../components/createImageModalElements.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";

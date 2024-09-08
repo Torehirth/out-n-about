@@ -1,4 +1,4 @@
-import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
+import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";
 import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
 import { toTopButtonWrapper, headerContainer, searchPostsWrapper, searchInput } from "../data/constants.mjs";

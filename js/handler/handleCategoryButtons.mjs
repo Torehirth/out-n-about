@@ -1,5 +1,6 @@
-import { filterPostsByCategory, loadMoreWrapper } from "../handler/handlePosts.mjs";
+import { loadMoreWrapper } from "../handler/handlePosts.mjs";
 import { allPosts } from "../handler/handlePosts.mjs";
+import { filterPostsByCategory } from "../handler/filterPostsByCategory.mjs";
 
 // highlight the category buttons and update headline to category name
 export const handleCategoryButtons = () => {

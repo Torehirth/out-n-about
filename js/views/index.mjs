@@ -1,4 +1,4 @@
-import { toggleMobileNav } from "../helper/toggleMobileNav.mjs";
+import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";
 import { displayNewsArticle } from "../ui/displayNewsArticle.mjs";

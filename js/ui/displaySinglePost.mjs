@@ -1,8 +1,8 @@
-import { renderPost } from "../components/article/renderPost.mjs";
+import { renderPost } from "../handler/renderPost.mjs";
 import { fetchPost } from "../api/fetchPost.mjs";
 import { message } from "../components/message.mjs";
 import { postContainer } from "../data/constants.mjs";
-import { updateDocumentTitle, updateUrlWithTitle } from "../helper/updateTitles.mjs";
+import { updateDocumentTitle, updateUrlWithTitle } from "../handler/updateTitles.mjs";
 import { getQueryParameter } from "../helper/getQueryParameter.mjs";
 
 export const displaySinglePost = async (container) => {

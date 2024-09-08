@@ -2,11 +2,11 @@ import { createPostImage } from "../components/createPostImage.mjs";
 import { cleanText } from "../helper/cleanText.mjs";
 
 export function createNewsArticleElements(container, posts) {
-  // exit the loading indicator when loaded
+  // remove the loading indicator when loaded
   container.innerHTML = "";
 
   // using the sort method and the new Date constructor to display the posts in descending order (latest post first). (reverse: (a-b))
-  // as default the WP API shows the last made posts first, but I'm adding this as backup.
+  // as default the WP API shows the last made posts first, but I'm adding this as backup or to show how.
   posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   // using the slice(start, end) method to display only the latest post

@@ -1,9 +1,8 @@
 // ----- search functionality -------
 import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
-import { displayPosts } from "../ui/displayPosts.mjs";
-import { searchContentContainer, searchInput } from "../data/constants.mjs";
+import { displayCards } from "../ui/displayCards.mjs";
+import { searchContentContainer, searchInput, mainContainer } from "../data/constants.mjs";
 import { message } from "../components/message.mjs";
-const mainContainer = document.querySelector("main");
 
 export const filterPostsBySearch = async (container) => {
   try {
@@ -24,7 +23,7 @@ export const filterPostsBySearch = async (container) => {
         mainContainer.style.opacity = "0.2";
       } else {
         searchContentContainer.classList.add("is-hidden");
-        // resets the opacity when no content is showing
+        // sets the opacity back to 1 when no content is showing
         mainContainer.style.opacity = "1";
       }
 
@@ -32,7 +31,7 @@ export const filterPostsBySearch = async (container) => {
         // clear container for posts after each event to only display posts that includes search value
         container.innerHTML = "";
         // if there is posts that includes the search value, display them.
-        displayPosts(filteredPosts, container);
+        displayCards(filteredPosts, container);
       } else {
         // show a message that there is no posts by that search value
         container.innerHTML = message("info", `No posts found by search value: ${searchValue}`);

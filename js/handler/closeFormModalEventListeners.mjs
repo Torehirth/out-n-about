@@ -1,25 +1,25 @@
 import { successMessageContainer, exitModalButton } from "../data/constants.mjs";
-import { exitSuccessModal } from "../handler/exitModal.mjs";
+import { exitFormSuccessModal } from "../ui/exitFormSuccessModal.mjs";
 
 // Close modal by clicking outside the modal
 export const closeFormModalByClickOutside = () => {
-  window.addEventListener("click", (event) => {
-    if (!successMessageContainer.contains(event.target)) {
-      exitSuccessModal();
+  document.addEventListener("click", (e) => {
+    if (!successMessageContainer.contains(e.target)) {
+      exitFormSuccessModal();
     }
   });
 };
 
-// Close modal by clicking the X button
+// Close modal by clicking the exit (X) button
 export const closeFormModalByButton = () => {
-  exitModalButton.addEventListener("click", exitSuccessModal);
+  exitModalButton.addEventListener("click", exitFormSuccessModal);
 };
 
 // Close modal by pressing the Escape or Enter key
 export const closeFormModalByKey = () => {
-  window.addEventListener("keydown", (event) => {
+  document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" || event.key === "Enter") {
-      exitSuccessModal();
+      exitFormSuccessModal();
     }
   });
 };
