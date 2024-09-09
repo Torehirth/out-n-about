@@ -1,4 +1,3 @@
-import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { displaySinglePost } from "../ui/displaySinglePost.mjs";
 import { createImageModalElements } from "../components/createImageModalElements.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";
@@ -9,15 +8,16 @@ import { InitializeModalEventListeners } from "../handler/InitializeModalEventLi
 import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from "../handler/searchBarEventListeners.mjs";
 import { filterPostsBySearch } from "../handler/filterPostsBySearch.mjs";
 import { preventSubmissionOnKeyPress } from "../helper/preventSubmissionOnKeyPress.mjs";
-
+import { mobileNavEventListeners } from "../handler/mobileNavEventListeners.mjs";
 import { fetchPost } from "../api/fetchPost.mjs";
+
 document.addEventListener("DOMContentLoaded", () => {
   // fetching post first to try increasing Lighthouse statistics
   fetchPost();
   // setting up event listeners to open/close modal
   InitializeModalEventListeners();
-  // mobile hamburger menu
-  toggleMobileNav();
+  // open/closes the mobile nav
+  mobileNavEventListeners();
   // latest blog post carousel
   displayCarousel();
   // display complete post

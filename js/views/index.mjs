@@ -1,4 +1,3 @@
-import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { fetchAllPosts } from "../api/fetchAllPosts.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";
 import { displayNewsArticle } from "../ui/displayNewsArticle.mjs";
@@ -7,12 +6,13 @@ import { landingButton, mainContent, toTopButtonWrapper, headerContainer, search
 import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from "../handler/searchBarEventListeners.mjs";
 import { filterPostsBySearch } from "../handler/filterPostsBySearch.mjs";
 import { preventSubmissionOnKeyPress } from "../helper/preventSubmissionOnKeyPress.mjs";
+import { mobileNavEventListeners } from "../handler/mobileNavEventListeners.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   // fetching all posts first to try increasing Lighthouse statistics
   fetchAllPosts();
-  // toggle mobile nav
-  toggleMobileNav();
+  // open/closes the mobile nav
+  mobileNavEventListeners();
   // display carouse
   displayCarousel();
   // display news article

@@ -1,4 +1,3 @@
-import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
 import { toTopButtonWrapper, headerContainer, searchPostsWrapper, searchInput } from "../data/constants.mjs";
 import { handleCategoryButtons } from "../handler/handleCategoryButtons.mjs";
@@ -7,12 +6,13 @@ import { toggleCategoryDropDownButton } from "../handler/toggleCategoryDropDownB
 import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from "../handler/searchBarEventListeners.mjs";
 import { filterPostsBySearch } from "../handler/filterPostsBySearch.mjs";
 import { preventSubmissionOnKeyPress } from "../helper/preventSubmissionOnKeyPress.mjs";
+import { mobileNavEventListeners } from "../handler/mobileNavEventListeners.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   // fetching all posts first to try increasing Lighthouse statistics
   fetchAllPosts();
-  // toggling mobile nav
-  toggleMobileNav();
+  // open/closes the mobile nav
+  mobileNavEventListeners();
   // scroll to header by "to top button"
   scrollToSectionByClick(toTopButtonWrapper, headerContainer);
   // function to display all posts by category and change category by buttons
