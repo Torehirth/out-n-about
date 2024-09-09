@@ -1,14 +1,14 @@
-import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { displayCarousel } from "../handler/displayCarousel.mjs";
 import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
 import { toTopButtonWrapper, headerContainer, searchPostsWrapper, searchInput } from "../data/constants.mjs";
 import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from "../handler/searchBarEventListeners.mjs";
 import { filterPostsBySearch } from "../handler/filterPostsBySearch.mjs";
 import { preventSubmissionOnKeyPress } from "../helper/preventSubmissionOnKeyPress.mjs";
+import { mobileNavEventListeners } from "../handler/mobileNavEventListeners.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // toggle mobile nav
-  toggleMobileNav();
+  // open/closes the mobile nav
+  mobileNavEventListeners();
   // display posts carousel
   displayCarousel();
   // scroll to header by "to top button"

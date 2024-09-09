@@ -1,4 +1,3 @@
-import { toggleMobileNav } from "../handler/toggleMobileNav.mjs";
 import { submitForm } from "../handler/submitForm.mjs";
 import { scrollToSectionByClick } from "../helper/scrollToSectionByClick.mjs";
 import { toTopButtonWrapper, headerContainer, searchPostsWrapper, searchInput } from "../data/constants.mjs";
@@ -6,9 +5,10 @@ import { closeFormModalByButton, closeFormModalByClickOutside, closeFormModalByK
 import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from "../handler/searchBarEventListeners.mjs";
 import { filterPostsBySearch } from "../handler/filterPostsBySearch.mjs";
 import { preventSubmissionOnKeyPress } from "../helper/preventSubmissionOnKeyPress.mjs";
+import { mobileNavEventListeners } from "../handler/mobileNavEventListeners.mjs";
 
-// toggling mobile nav
-toggleMobileNav();
+// open/closes the mobile nav
+mobileNavEventListeners();
 // Calling the submitForm function
 submitForm();
 // scroll to header by "to top button"
