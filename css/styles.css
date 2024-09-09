@@ -94,6 +94,21 @@ body {
   --max-blog-post-width: 900px;
 }
 
+/* Dark mode variables */
+:root.dark-mode {
+  --orange: #fb9600; /* keep same */
+  --red: #9e0f0f; /* keep same */
+  --white: #202020; /* dark background */
+  --light-grey: #444444; /* darker grey */
+  --turquoise: #40c0b0; /* keep same */
+  --dark-blue: #011f26; /* darker blue */
+  --black: #f7f7f7; /* light text */
+  --black-light-opacity: rgba(32, 32, 32, 0.9);
+  --black-low-opacity: rgba(32, 32, 32, 0.7);
+  --btn-shadow: 1px 1px 4px var(--white); /* adjust shadows */
+  --btn-shadow-2: 2px 2px 10px var(--light-grey);
+}
+
 /* ---icons and symbols--- */
 .material-symbols-sharp {
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
@@ -300,11 +315,62 @@ button {
 }
 
 /* ------------ header ----------- */
+.dark-mode-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  max-width: var(--max-width-desktop);
+  margin: 0 auto;
+  padding: 5px 10px 0;
+}
+
+.dark-mode-container button {
+  border: none;
+  line-height: 0;
+  background-color: transparent;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-size-12);
+  color: var(--turquoise);
+}
+
+#light-mode-button,
+#dark-mode-button {
+  pointer-events: none;
+  display: flex;
+  transition: var(--transition);
+}
+
+/* activated through javascript */
+#light-mode-button.is-showing,
+#dark-mode-button.is-showing {
+  display: none;
+  z-index: 1000;
+}
+
+.light-mode-icon,
+.dark-mode-icon {
+  text-shadow: 1px 1px 10px var(--white);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.light-mode-icon:hover,
+.dark-mode-icon:hover {
+  color: var(--orange);
+}
+
 .header-nav {
   display: flex;
   max-width: var(--max-width-desktop);
   margin-inline: auto;
-  padding: 1rem 10px;
+  padding: 0 10px 1rem;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -1048,7 +1114,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6px auto;
+  padding: 6px 1rem;
   font-size: var(--text-size-14);
   letter-spacing: var(--letter-space-05);
   color: var(--white);

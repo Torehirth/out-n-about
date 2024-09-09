@@ -10,6 +10,7 @@ import { filterPostsBySearch } from "../handler/filterPostsBySearch.mjs";
 import { preventSubmissionOnKeyPress } from "../helper/preventSubmissionOnKeyPress.mjs";
 import { mobileNavEventListeners } from "../handler/mobileNavEventListeners.mjs";
 import { fetchPost } from "../api/fetchPost.mjs";
+import { toggleDarkMode } from "../handler/toggleDarkMode.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   // fetching post first to try increasing Lighthouse statistics
@@ -36,4 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   filterPostsBySearch(searchPostsWrapper);
   // prevent submission from "Enter" key
   preventSubmissionOnKeyPress(searchInput, "Enter");
+  // toggle dark mode/light mode
+  toggleDarkMode();
 });

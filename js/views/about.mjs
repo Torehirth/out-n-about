@@ -5,6 +5,7 @@ import { toggleNavSearchIcon, closeSearchBarByClick, closeSearchBarByKey } from 
 import { filterPostsBySearch } from "../handler/filterPostsBySearch.mjs";
 import { preventSubmissionOnKeyPress } from "../helper/preventSubmissionOnKeyPress.mjs";
 import { mobileNavEventListeners } from "../handler/mobileNavEventListeners.mjs";
+import { toggleDarkMode } from "../handler/toggleDarkMode.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   // open/closes the mobile nav
@@ -23,4 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   filterPostsBySearch(searchPostsWrapper);
   // prevent submission from "Enter" key
   preventSubmissionOnKeyPress(searchInput, "Enter");
+  // toggle dark mode/light mode
+  toggleDarkMode();
 });
