@@ -121,8 +121,6 @@ h6 {
   text-transform: capitalize;
   color: var(--black);
   letter-spacing: var(--letter-space-05);
-  /* ensures text is visible under loading of custom fonts */
-  font-display: swap;
 }
 
 h1 {
