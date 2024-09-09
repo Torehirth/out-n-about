@@ -1,13 +1,16 @@
 import { hamburgerMenu, mobileNav, navLinks, mobileNavLinks, mobileSoMeLinks } from "../data/constants.mjs";
 
+// toggle the mobile nav with the hamburger icon
 export function toggleMobileNav() {
   function closeMobileNav() {
     hamburgerMenu.classList.remove("is-active");
     mobileNav.classList.remove("is-active");
   }
 
-  function handleClickOutside(event) {
-    if (!mobileNavLinks.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+  // close mobile nav when click outside
+  function handleClickOutside(e) {
+    // if the HTML element is not an "a" or the hamburger icon doesn't contain the event target, close the nav
+    if (e.target.localName !== "a" && !hamburgerMenu.contains(e.target)) {
       closeMobileNav();
     }
   }
@@ -15,8 +18,7 @@ export function toggleMobileNav() {
   hamburgerMenu.addEventListener("click", function (event) {
     // prevent the click event from propagating to the document, and prevents the nav from closing immediately after opened.
     event.stopPropagation();
-    // console.log(event.target);
-    
+
     // toggles the hamburger menu and mobile nav.
     hamburgerMenu.classList.toggle("is-active");
     mobileNav.classList.toggle("is-active");

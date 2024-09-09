@@ -13,8 +13,8 @@ export const loadMoreWrapper = document.querySelector(".load-btn-wrapper");
 
 // clear the loading indicator after the posts are loaded.
 postWrapper.innerHTML = "";
-// adding the default parameter for "all articles" category to the argument
-export async function handlePosts(container, categoryId = "31") {
+// adding the container and categoryId as arguments
+export async function handlePosts(container, categoryId) {
   try {
     loadMoreBtn.disabled = true;
 
@@ -55,7 +55,7 @@ loadMoreBtn.addEventListener("click", () => {
 export const setCurrentIndex = (value) => {
   currentIndex = value;
 };
-
+// setter function for exporting the allPosts variable to filterPostsByCategory function.
 export const setAllPosts = (value) => {
   allPosts = value;
 };

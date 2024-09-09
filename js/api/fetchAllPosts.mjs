@@ -3,7 +3,7 @@ import { message } from "../components/message.mjs";
 
 // Fetching all posts function with categoryId as empty by default
 export async function fetchAllPosts(container, categoryId = "") {
-  // checks if categoryId is truthy/false, returns id if truthy or empty if falsy.
+  // checks if categoryId is truthy/false, returns id to the parameter if truthy or empty if it's falsy.
   const categoryParameter = categoryId ? `categories=${categoryId}` : "";
   // posts per page
   const perPage = 20;
