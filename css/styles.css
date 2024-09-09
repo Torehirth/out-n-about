@@ -1111,7 +1111,7 @@ footer {
 }
 
 .article-card-img {
-  max-width: 400px;
+  width: 400px;
   max-height: 300px;
   object-fit: cover;
   border-radius: var(--border-radius);
@@ -1147,7 +1147,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0rem 0 4rem;
+  padding: 0 0 4rem;
   max-width: var(--max-width-desktop);
   margin: 0 auto;
 }
@@ -1910,7 +1910,7 @@ footer {
   }
 
   .article-card-img {
-    max-width: 250px;
+    width: 250px;
     max-height: 200px;
   }
 
