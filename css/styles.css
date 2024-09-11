@@ -216,7 +216,6 @@ button {
 /* ---current page--- */
 .current-page {
   border-bottom: solid 1px var(--orange);
-  margin: 0 0 0.5rem;
 }
 
 /* -------- Loader -------- */
