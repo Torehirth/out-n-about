@@ -1,3 +1,6 @@
+// General
+export const HTMLbody = document.querySelector("body");
+
 // ---Mobile nav menu---
 export const hamburgerMenu = document.querySelector(".hamburger");
 export const mobileNav = document.querySelector(".mobile-nav");
