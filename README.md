@@ -6,7 +6,7 @@ The website focuses on outdoor adventures such as climbing, skiing, and mountain
 > Preview of the landing page:
 <p align="left"><img height="350px" src="https://github.com/user-attachments/assets/0b83b4a2-3beb-4030-90ea-fe12d550bc2c" alt="gif of landing page" /></p>
 
-Explore the project by visiting the live website or view the source code - [Out 'n About](https://tmh-outnabout.netlify.app)
+Explore the project by visiting the live website - [Out 'n About](https://tmh-outnabout.netlify.app)
 
 ### Key Features
 - Home Page with a slider displaying the latest posts.
