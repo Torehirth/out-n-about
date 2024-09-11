@@ -11,7 +11,7 @@ export const createSubTextContainer = (container, postContent) => {
   const parser = new DOMParser();
   const content = parser.parseFromString(postContent, "text/html");
   // selects the h3 from the newly created object
-  const subtitles = content.querySelectorAll("h3");
+  const subtitles = content.querySelectorAll("h3");    
 
   // loops through each h3 element of the object and stores all of the "p" siblings to the paragraphs array
   subtitles.forEach((subtitle) => {

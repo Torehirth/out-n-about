@@ -319,38 +319,33 @@ button {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  position: relative;
+  /* position: relative; */
   max-width: var(--max-width-desktop);
   margin: 0 auto;
   padding: 5px 10px 0;
 }
 
-.dark-mode-container button {
+#light-mode-button,
+#dark-mode-button {
   border: none;
   line-height: 0;
   background-color: transparent;
-  position: relative;
   top: 0;
-  z-index: 1000;
-  display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
   font-size: var(--text-size-12);
   color: var(--turquoise);
-}
-
-#light-mode-button,
-#dark-mode-button {
   pointer-events: none;
-  display: flex;
+  display: none;
   transition: var(--transition);
 }
 
 /* activated through javascript */
 #light-mode-button.is-showing,
 #dark-mode-button.is-showing {
-  display: none;
+  display: flex;
+  pointer-events: none;
   z-index: 1000;
 }
 
@@ -359,6 +354,7 @@ button {
   text-shadow: 1px 1px 10px var(--white);
   pointer-events: auto;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .light-mode-icon:hover,

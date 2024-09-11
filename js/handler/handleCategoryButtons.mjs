@@ -6,7 +6,7 @@ import { filterPostsByCategory } from "../handler/filterPostsByCategory.mjs";
 export const handleCategoryButtons = () => {
   const buttons = document.querySelectorAll(".category-button");
   const headline = document.querySelector(".main-heading");
-  const allPostsButton = document.querySelector(".all-posts-btn.all-posts-btn");
+  const allPostsButton = document.querySelector(".all-posts-btn");
   // call the function with categoryId for all posts initially to display all posts and highlight the "All" category button.
   filterPostsByCategory("31");
   // highlight the "All" button initially

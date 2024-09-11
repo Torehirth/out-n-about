@@ -20,7 +20,7 @@ export async function handlePosts(container, categoryId) {
 
     // Clear container before loading new posts
     if (currentIndex === 0) {
-      container.innerHTML = ""; // Clear the container if starting over
+      container.innerHTML = "";
     }
 
     if (allPosts.length === 0) {

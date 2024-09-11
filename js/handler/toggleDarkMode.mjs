@@ -7,10 +7,12 @@ const darkModeButtonContainer = document.querySelector(".dark-mode-container");
 
 export const toggleDarkMode = () => {
   darkModeButtonContainer.addEventListener("click", (e) => {
-    if (darkModeButton.classList.contains("is-showing")) {
+    if (!document.documentElement.classList.contains("dark-mode")) {
       initializeDarkMode(darkModeButton, lightModeButton);
     } else {
       initializeLightMode(darkModeButton, lightModeButton);
     }
   });
 };
+
+// document.documentElement.classList.add("dark-mode");
