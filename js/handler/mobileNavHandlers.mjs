@@ -1,4 +1,4 @@
-import { hamburgerMenu, mobileNav } from "../data/constants.mjs";
+import { hamburgerMenu, mobileNav, HTMLbody } from "../data/constants.mjs";
 
 export function toggleMobileNav() {
   // toggles the hamburger menu and mobile nav.
@@ -19,3 +19,12 @@ export function closeMobileNavByClickOutside(e) {
     closeMobileNav();
   }
 }
+
+// if mobile nav is open stop page from scrolling
+export const disableScrollWhenMobileNavOpen = () => {
+  if (hamburgerMenu.classList.contains("is-active")) {
+    HTMLbody.style.overflow = "hidden";
+  } else {
+    HTMLbody.style.overflow = "visible";
+  }
+};

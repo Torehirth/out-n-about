@@ -216,6 +216,7 @@ button {
 /* ---current page--- */
 .current-page {
   border-bottom: solid 1px var(--orange);
+  margin: 0 0 0.5rem;
 }
 
 /* -------- Loader -------- */
@@ -1720,7 +1721,7 @@ footer {
     gap: 1rem;
     max-width: min(100%, 150px);
     margin-inline: auto;
-    padding: 8rem 2rem;
+    padding: 4rem 2rem 6rem;
     font-size: var(--link-size);
     text-align: center;
   }
