@@ -33,7 +33,7 @@ export const validateInputFields = () => {
   if (subjectValue === "") {
     setError(subject, "A subject is required");
   } else if (subjectValue.length <= 15) {
-    setError(subject, "The subject must be at least 15 characters long");
+    setError(subject, "Subject must be at least 15 characters long");
   } else {
     setSuccess(subject);
   }
@@ -42,7 +42,7 @@ export const validateInputFields = () => {
   if (messageValue === "") {
     setError(message, "A message is required");
   } else if (messageValue.length <= 25) {
-    setError(message, "The message must be at least 25 characters long");
+    setError(message, "Message must be at least 25 characters long");
   } else {
     setSuccess(message);
   }

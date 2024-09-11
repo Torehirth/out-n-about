@@ -1819,7 +1819,7 @@ footer {
 
   .copyright {
     font-size: var(--text-size-12);
-    padding: 2rem 10px 2rem;
+    padding: 1rem 10px;
   }
 
   /* --- landing page --- */
@@ -1974,6 +1974,10 @@ footer {
     height: 150px;
   }
 
+  .form-message {
+    font-size: var(--text-size-14);
+  }
+
   .submit-button {
     padding: 15px 25px;
     font-size: 1rem;
@@ -2048,8 +2052,17 @@ footer {
 /* ---------------  ----------------- */
 @media (width <= 500px) {
   /* diplay none */
-  .logo-text {
+  .logo-text,
+  .modal-exit-btn {
     display: none;
+  }
+
+  /* messages */
+  .success,
+  .warning,
+  .error,
+  .info {
+    font-size: var(--text-size-14);
   }
 
   /* --- footer --- */
@@ -2059,6 +2072,10 @@ footer {
 
   .footer-nav {
     flex-direction: column;
+  }
+
+  .copyright {
+    letter-spacing: var(--letter-space-05);
   }
 
   /* index page */
