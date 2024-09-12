@@ -695,7 +695,6 @@ footer {
 }
 
 /*--- News section ---*/
-
 .news-container {
   display: flex;
   flex-direction: column;
@@ -2087,6 +2086,11 @@ footer {
   /* news section */
   .news-container {
     padding: 1rem 2rem 2rem;
+  }
+
+  /* Specific post page */
+  .sub-text-wrapper {
+    text-align: center;
   }
 
   /* contact page */
