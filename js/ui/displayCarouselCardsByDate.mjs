@@ -14,7 +14,7 @@ export const displayCarouselCardsByDate = (container, posts, numberOfPosts) => {
 
   limitedPosts.forEach((post) => {
     // creating and appending all html elements.
-    const outerCardContainer = document.createElement("div");
+    const outerCardContainer = document.createElement("article");
     container.appendChild(outerCardContainer);
     outerCardContainer.id = "carousel-cards";
 

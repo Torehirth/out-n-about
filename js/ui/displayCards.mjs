@@ -11,7 +11,7 @@ export function displayCards(posts, container) {
     const postLink = document.createElement("a");
     postLink.href = `../article/index.html?id=${post.id}`;
 
-    const articleCard = document.createElement("div");
+    const articleCard = document.createElement("article");
     articleCard.classList.add("article-card");
 
     const img = createPostImage(post, "article-card-img", "medium_featured");

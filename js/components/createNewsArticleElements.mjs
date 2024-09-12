@@ -14,7 +14,7 @@ export function createNewsArticleElements(container, posts) {
 
   latestPost.forEach((post) => {
     // creating and appending all html elements.
-    const newsCard = document.createElement("div");
+    const newsCard = document.createElement("article");
     newsCard.classList.add("card-container");
     container.appendChild(newsCard);
 
